@@ -7,7 +7,7 @@ public class Usuario {
 	private LocalDate dataDeNascimento;
 	private Escolaridade escolaridade;
 	
-	//Comentario de teste
+	//Comentario de teste, seg teste
 	
 	DateTimeFormatter formatter = DateTimeFormatter.ofPattern("dd-MM-yyyy");
 	
