@@ -7,6 +7,8 @@ public class Usuario {
 	private LocalDate dataDeNascimento;
 	private Escolaridade escolaridade;
 	
+	//Comentario de teste
+	
 	DateTimeFormatter formatter = DateTimeFormatter.ofPattern("dd-MM-yyyy");
 	
 	public Usuario(String nome, String dataDeNascimento, Escolaridade escolaridade) {
