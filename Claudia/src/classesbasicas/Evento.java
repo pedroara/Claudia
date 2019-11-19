@@ -63,4 +63,13 @@ public class Evento {
 	public void ajustarRepeticao() {
 		//TODO
 	}
+	
+	public void removerTag() {
+		//TODO
+	}
+	
+	public void adicionarTag(Tag tag) {
+		//TODO
+	}
+
 }
