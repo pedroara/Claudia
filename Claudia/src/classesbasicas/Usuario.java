@@ -1,13 +1,15 @@
-package classesbasicas;
+package sistema.claudia.negocio;
+
 import java.time.LocalDate;
 import java.time.format.DateTimeFormatter;
+import sistema.claudia.negocio.Escolaridade;
 
 public class Usuario {
 	private String nome;
+	private String login;
+	private int senha;
 	private LocalDate dataDeNascimento;
 	private Escolaridade escolaridade;
-	
-	//Comentario de teste
 	
 	DateTimeFormatter formatter = DateTimeFormatter.ofPattern("dd-MM-yyyy");
 	
@@ -49,8 +51,19 @@ public class Usuario {
 		this.formatter = formatter;
 	}
 	
-	
-	
-	
+	public String getLogin() {
+		return login;
+	}
 
+	public void setLogin(String login) {
+		this.login = login;
+	}
+
+	public int getSenha() {
+		return senha;
+	}
+
+	public void setSenha(int senha) {
+		this.senha = senha;
+	}
 }
