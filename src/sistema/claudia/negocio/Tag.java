@@ -75,6 +75,8 @@ public class Tag {
 				eventos.get(i).setDataHoraFim(finalDate);
 			}
 		}
+
+		
 		//Mudando o evento que ta no calendario
 		for(int i = 0 ; i < cale.getEventos().size() ; i++) {
 			if(evento.equals(cale.getEventos().get(i))) {
