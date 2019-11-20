@@ -15,12 +15,22 @@ public class Calendario {
 		senha = senhaDoLogin;
 	}
 	
+	public Evento BuscarEventoPeloNome (String nome) {
+		for (int i = 0 ; i < eventos.size() ; i++) {
+			if(eventos.get(i).getNome() == nome) {
+				return eventos.get(i);
+			}
+		}
+		return null;
+	}
+	
+	
 	public ArrayList<Evento> getEventos(){
 		return eventos;
 	}
 	
-	public void adicionar(String nome, String descricao, Tag[] tag, String dataHoraInicio, String dataHoraFim) {
-		Evento e = new Evento(nome, descricao, tag, dataHoraInicio, dataHoraFim);
+	public void adicionar(String nome, String descricao, String dataHoraInicio, String dataHoraFim) {
+		Evento e = new Evento(nome, descricao, dataHoraInicio, dataHoraFim);
 		eventos.add(e);
 	}
 	

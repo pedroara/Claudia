@@ -2,6 +2,9 @@ package sistema.claudia.negocio;
 
 import java.time.LocalDate;
 import java.time.format.DateTimeFormatter;
+
+import sistema.claudia.dados.Calendario;
+import sistema.claudia.dados.RepositorioTag;
 import sistema.claudia.negocio.Escolaridade;
 
 public class Usuario {
@@ -10,13 +13,16 @@ public class Usuario {
 	private int senha;
 	private LocalDate dataDeNascimento;
 	private Escolaridade escolaridade;
+	public Calendario calendario;
+	public RepositorioTag repoTag;
 	
 	DateTimeFormatter formatter = DateTimeFormatter.ofPattern("dd-MM-yyyy");
 	
-	public Usuario(String nome, String dataDeNascimento, Escolaridade escolaridade) {
+	public Usuario(String nome, String dataDeNascimento, Escolaridade escolaridade, Calendario calendario, RepositorioTag repoTag) {
+		this.calendario = calendario;
+		this.repoTag = repoTag;
 		this.nome = nome;
 		this.dataDeNascimento = LocalDate.parse(dataDeNascimento, formatter);
-		this.escolaridade = escolaridade;
 	}
 
 	public String getNome() {

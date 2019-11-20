@@ -11,7 +11,7 @@ public class Evento {
 		
 	DateTimeFormatter formatter = DateTimeFormatter.ofPattern("dd-MM-yyyy HH:mm");
 		
-	public Evento(String nome, String descricao, Tag[] tag, String dataHoraInicio, String dataHoraFim) {
+	public Evento(String nome, String descricao, String dataHoraInicio, String dataHoraFim) {
 		this.nome = nome;
 		this.descricao = descricao;
 		this.dataHoraInicio = LocalDateTime.parse(dataHoraInicio, formatter);
