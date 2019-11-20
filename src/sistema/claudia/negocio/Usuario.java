@@ -14,13 +14,13 @@ public class Usuario {
 	private LocalDate dataDeNascimento;
 	private Escolaridade escolaridade;
 	public Calendario calendario;
-	public RepositorioTag repoTag;
+	public RepositorioTag reposTag;
 	
 	DateTimeFormatter formatter = DateTimeFormatter.ofPattern("dd-MM-yyyy");
 	
-	public Usuario(String nome, String dataDeNascimento, Escolaridade escolaridade, Calendario calendario, RepositorioTag repoTag) {
+	public Usuario(String nome, String dataDeNascimento, Escolaridade escolaridade, Calendario calendario, RepositorioTag reposTag) {
 		this.calendario = calendario;
-		this.repoTag = repoTag;
+		this.reposTag = reposTag;
 		this.nome = nome;
 		this.dataDeNascimento = LocalDate.parse(dataDeNascimento, formatter);
 	}

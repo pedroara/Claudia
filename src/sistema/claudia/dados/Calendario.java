@@ -4,15 +4,12 @@ import java.time.LocalDateTime;
 import java.util.ArrayList;
 import java.util.List;
 import sistema.claudia.negocio.Evento;
-import sistema.claudia.negocio.Tag;
 
 public class Calendario {
 	private ArrayList<Evento> eventos;
-	private int senha;
 	
 	public Calendario(int senhaDoLogin) {
 		List<Evento> eventos = new ArrayList<>();
-		senha = senhaDoLogin;
 	}
 	
 	public Evento BuscarEventoPeloNome (String nome) {
