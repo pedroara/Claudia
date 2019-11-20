@@ -2,6 +2,7 @@ package sistema.claudia.negocio;
 
 import java.time.LocalDateTime;
 import java.time.format.DateTimeFormatter;
+import sistema.claudia.dados.RepositorioTags;
 
 public class Evento {
 	private LocalDateTime dataHoraInicio;
@@ -64,11 +65,47 @@ public class Evento {
 		//TODO
 	}
 	
-	public void removerTag() {
-		//TODO
+	public void removerTag(Tag tag) {
+		
+		ArrayList<Tag> buscaTag = new ArrayList<>();
+		
+		for(Tag k: this.tag) {
+			buscaTag.add(k);
+		}
+		
+		for(int i = 0; i <= buscaTag.size(); i++) {
+			
+			if(buscaTag.get(i) == tag) {
+				buscaTag.remove(i);
+				break;
+			}
+		}
+
+		Tag[] novaTag = new Tag[buscaTag.size()];
+		
+		for(int i = 0; i <= (novaTag.length - 1); i++) {
+			novaTag[i] = buscaTag.get(i);	
+		}
+		
+		this.tag = novaTag;
 	}
 	
-	public void adicionarTag() {
-		//TODO
+	public void adicionarTag(Tag tag) {
+		if(this.tag != null && !contem(tag)) {
+			
+			Tag[] novaTag = new Tag[this.tag.length + 1];
+			
+			for(int i = 0; i <= (this.tag.length - 1); i++) {
+				novaTag[i] = this.tag[i];
+			}
+			
+			novaTag[novaTag.length - 1] = tag;
+			this.tag = novaTag;
+			
+		} else {
+			
+			this.tag = new Tag[1];
+			this.tag[0] = tag;
+		}
 	}
 }
