@@ -39,7 +39,7 @@ public class Calendario {
 	}
 	
 	public Evento buscarPorNome(String nome) {
-		if(nome != null) {
+		if(nome != null && eventos != null) {
 			for(Evento ev: eventos) {
 				if(ev.getNome().equals(nome)) {
 					return ev;
