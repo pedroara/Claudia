@@ -27,10 +27,11 @@ public class Calendario {
 	}
 	
 	public void adicionar(String nome, String descricao, String dataHoraInicio, String dataHoraFim) {
-		Evento evento = new Evento(nome, descricao, dataHoraInicio, dataHoraFim);
-		eventos.add(evento);
+		if(eventos != null) {
+			Evento evento = new Evento(nome, descricao, dataHoraInicio, dataHoraFim);
+			eventos.add(evento);
+		}
 	}
-	
 	public void remover(Evento e) {
 		if(eventos.contains(e) && e != null) {
 			eventos.remove(e);
