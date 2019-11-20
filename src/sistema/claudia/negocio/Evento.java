@@ -105,5 +105,15 @@ public class Evento {
 		}
 		return false;
 	}
+
+	@Override
+	public String toString() {
+		return "Evento [dataHoraInicio=" + dataHoraInicio + ", dataHoraFim=" + dataHoraFim + ", nome=" + nome
+				+ ", descricao=" + descricao + ", formatter=" + formatter + "]";
+	}
+	
+	
+	
+	
 	
 }

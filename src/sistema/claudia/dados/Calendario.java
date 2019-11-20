@@ -27,8 +27,8 @@ public class Calendario {
 	}
 	
 	public void adicionar(String nome, String descricao, String dataHoraInicio, String dataHoraFim) {
-		Evento e = new Evento(nome, descricao, dataHoraInicio, dataHoraFim);
-		eventos.add(e);
+		Evento evento = new Evento(nome, descricao, dataHoraInicio, dataHoraFim);
+		eventos.add(evento);
 	}
 	
 	public void remover(Evento e) {
