@@ -15,6 +15,10 @@ public class Calendario {
 		senha = senhaDoLogin;
 	}
 	
+	public ArrayList<Evento> getEventos(){
+		return eventos;
+	}
+	
 	public void adicionar(String nome, String descricao, Tag[] tag, String dataHoraInicio, String dataHoraFim) {
 		Evento e = new Evento(nome, descricao, tag, dataHoraInicio, dataHoraFim);
 		eventos.add(e);
