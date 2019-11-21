@@ -83,4 +83,13 @@ public class Calendario {
 	public void filtrarPorTag() {
 		//TODO
 	}
+	
+	public boolean existe(Evento e) {
+		for(Evento busca: eventos) {
+			if(busca == e) {
+				return true;
+			}
+		}
+		return false;
+	}
 }
