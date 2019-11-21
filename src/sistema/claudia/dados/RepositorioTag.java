@@ -50,9 +50,7 @@ public class RepositorioTag {
 			}
 		}
 		
-		return tagsExistentes;
-		
-		
+		return tagsExistentes;	
 	}
 	
 	public void editarEventoPelaTag(
