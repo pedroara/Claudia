@@ -32,7 +32,10 @@ public class RepositorioTag {
 	}
 	
 	public void adicionarEventoNaTag(Tag tag,Evento evento) {
-		tag.getEventos().add(evento);
+		if(evento != null) {
+			tag.getEventos().add(evento);
+		}
+		
 	}
 	
 	public void editarEventoPelaTag(
@@ -58,12 +61,14 @@ public class RepositorioTag {
 		
 		
 		//Mudando o evento que ta no calendario
-		for(int i = 0 ; i < cale.getEventos().size() ; i++) {
-			if(evento.equals(cale.getEventos().get(i))) {
-				cale.getEventos().get(i).setNome(nome);
-				cale.getEventos().get(i).setDescricao(descricao);
-				cale.getEventos().get(i).setDataHoraInicio(inicialDate);
-				cale.getEventos().get(i).setDataHoraFim(finalDate);
+		if(tags != null && cale.getEventos() != null) {
+			for(int i = 0 ; i < cale.getEventos().size() ; i++) {
+				if(evento.equals(cale.getEventos().get(i))) {
+					cale.getEventos().get(i).setNome(nome);
+					cale.getEventos().get(i).setDescricao(descricao);
+					cale.getEventos().get(i).setDataHoraInicio(inicialDate);
+					cale.getEventos().get(i).setDataHoraFim(finalDate);
+				}
 			}
 		}
 	}

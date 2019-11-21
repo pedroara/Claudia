@@ -19,9 +19,11 @@ public class RepositorioUsuario {
 	}
 	
 	public Usuario getUsuarioPeloNome(String nome) {
-		for(int i = 0 ; i < repoUser.size(); i++) {
-			if(nome == repoUser.get(i).getNome()) {
-				return repoUser.get(i);
+		if(repoUser != null) {
+			for(int i = 0 ; i < repoUser.size(); i++) {
+				if(nome == repoUser.get(i).getNome() && repoUser.get(i) != null) {
+					return repoUser.get(i);
+				}
 			}
 		}
 		return null;

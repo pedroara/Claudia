@@ -8,15 +8,19 @@ import sistema.claudia.negocio.Evento;
 public class Calendario {
 	private ArrayList<Evento> eventos;
 	
-	public Calendario(int senhaDoLogin) {
+	public Calendario() {
 		List<Evento> eventos = new ArrayList<>();
+		Evento natal = new Evento ("Natal", "Feriado comercial", "25-12-2019 00:00", "26-12-2019 00:00");
+		eventos.add(natal);
 	}
 	
 	public Evento BuscarEventoPeloNome (String nome) {
-		for (int i = 0 ; i < eventos.size() ; i++) {
-			if(eventos.get(i).getNome() == nome) {
-				return eventos.get(i);
-			}
+		if(eventos != null) {
+			for (int i = 0 ; i < eventos.size() ; i++) {
+				if(eventos.get(i).getNome() == nome) {
+					return eventos.get(i);
+				}
+			}	
 		}
 		return null;
 	}
