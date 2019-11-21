@@ -111,7 +111,9 @@ public class Evento {
 		return this.nome;
 	}
 	
-	
+	public String dataToString(LocalDateTime data) {
+		return  data.getDayOfMonth() + "-" + data.getMonthValue() + "-" + data.getYear() + " " + data.getHour() + ":" + data.getMinute();
+	}
 	
 	
 	
