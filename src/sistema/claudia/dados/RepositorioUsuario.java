@@ -18,6 +18,14 @@ public class RepositorioUsuario {
 		repoUser.add(user);
 	}
 	
+	public void removerUsuario(Usuario user) {
+		for(Usuario u: repoUser) {
+			if(user.equals(u)) {
+				repoUser.remove(u);
+			}
+		}
+	}
+	
 //	public Usuario getUsuarioPeloNome(String nome) {
 //		if(repoUser != null) {
 //			for(int i = 0 ; i < repoUser.size(); i++) {

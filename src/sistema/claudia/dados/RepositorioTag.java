@@ -107,8 +107,16 @@ public class RepositorioTag {
 		return -1;
 	}
 
-	public void removerTag(int index, Tag tag) {
+	public void removerEventoTag(int index, Tag tag) {
 		tag.getEventos().remove(index);
+	}
+	
+	public void removerTag(Tag tag) {
+		for(Tag t: tags){
+			if(t == tag) {
+				tags.remove(t);
+			}
+		}
 	}
 	
 	public List<Evento> listarEventosPorTag(String tag, ArrayList<Tag> tags) {
