@@ -6,7 +6,7 @@ public class Tag {
 	
 	//Atributos:
 	private String nome;
-	private ArrayList <Evento> eventos;
+	public ArrayList <Evento> eventos;
 	
 	//Construtores:
 	public Tag(String nome) {
