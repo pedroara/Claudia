@@ -10,7 +10,13 @@ public class Evento {
 	private String descricao;
 		
 	DateTimeFormatter formatter = DateTimeFormatter.ofPattern("dd-MM-yyyy HH:mm");
-		
+	
+	
+	
+	public Evento(String nome) {
+		this.nome = nome;
+	}
+
 	public Evento(String nome, String descricao, String dataHoraInicio, String dataHoraFim) {
 		this.nome = nome;
 		this.descricao = descricao;

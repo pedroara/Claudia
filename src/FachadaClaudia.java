@@ -1,4 +1,4 @@
-package sistema.claudia.negocio;
+
 
 import java.time.LocalDateTime;
 import java.util.ArrayList;
@@ -7,6 +7,8 @@ import sistema.claudia.dados.Calendario;
 import sistema.claudia.dados.RepositorioUsuario;
 import sistema.claudia.exceptions.CampoVazioException;
 import sistema.claudia.exceptions.EventoJaExistenteException;
+import sistema.claudia.negocio.ControladorCalendario;
+import sistema.claudia.negocio.Evento;
 
 public class FachadaClaudia {
 	

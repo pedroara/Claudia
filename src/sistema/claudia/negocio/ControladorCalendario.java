@@ -6,10 +6,15 @@ import sistema.claudia.exceptions.DataInvalidaException;
 import sistema.claudia.exceptions.EventoJaExistenteException;
 import sistema.claudia.negocio.Evento;
 import java.time.temporal.ChronoField;
+import java.util.ArrayList;
 
 public class ControladorCalendario {
 	
 	private Calendario calendario;
+	
+	public ArrayList<Evento> getArrayEvento(){
+		return calendario.getEventos();
+	}
 	
 	public ControladorCalendario(Calendario calendario) {
 		this.calendario = calendario;

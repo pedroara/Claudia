@@ -50,17 +50,18 @@ public class RepositorioUsuario {
 		}
 		return null;
 	}
-	
-	@SuppressWarnings("unused")
-	private Usuario login (String nomeDoUsuario,  int senha){
-		for(int  i = 0; i < repoUser.size() ; i++) {
-			if(nomeDoUsuario.equals(repoUser.get(i).getNome())) {
-				if(senha == repoUser.get(i).getSenha()) {
-					return repoUser.get(i);
-				}
-			}
-		}
-		return repoUser.get(0);
-	}
+
+// Não funcionou no controlador
+//	@SuppressWarnings("unused")
+//	private Usuario login (String nomeDoUsuario,  int senha){
+//		for(int  i = 0; i < repoUser.size() ; i++) {
+//			if(nomeDoUsuario.equals(repoUser.get(i).getNome())) {
+//				if(senha == repoUser.get(i).getSenha()) {
+//					return repoUser.get(i);
+//				}
+//			}
+//		}
+//		return repoUser.get(0);
+//	}
 	
 }
