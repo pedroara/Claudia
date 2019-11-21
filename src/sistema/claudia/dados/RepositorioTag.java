@@ -1,6 +1,7 @@
 package sistema.claudia.dados;
 
 import java.util.ArrayList;
+import java.util.List;
 
 import sistema.claudia.negocio.Evento;
 import sistema.claudia.negocio.Tag;
@@ -112,6 +113,18 @@ public class RepositorioTag {
 		tag.getEventos().remove(index);
 	}
 	
-	
+	public List<Evento> listarEventosPorTag(String tag, ArrayList<Tag> tags) {
+		List<Evento> eventosDaTag = new ArrayList<>();
+		
+		if(tags != null && tag != null) {
+			for(Tag t: tags) {
+				if(t.getNome().equals(tag)) {
+					eventosDaTag.add(t.eventos);
+				}
+			}
+			return eventosDaTag;
+		}
+		return null;
+	}
 	
 }
