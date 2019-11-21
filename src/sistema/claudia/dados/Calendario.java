@@ -9,7 +9,7 @@ public class Calendario {
 	private ArrayList<Evento> eventos;
 	
 	public Calendario() {
-		List<Evento> eventos = new ArrayList<Evento>();
+		eventos = new ArrayList<Evento>();
 		Evento natal = new Evento ("Natal", "Feriado comercial", "25-12-2019 00:00", "26-12-2019 00:00");
 		eventos.add(natal);
 	}
@@ -32,8 +32,10 @@ public class Calendario {
 	
 	public void adicionar(String nome, String descricao, String dataHoraInicio, String dataHoraFim) {
 		if(eventos != null) {
+
 			Evento evento = new Evento(nome, descricao, dataHoraInicio, dataHoraFim);
-			eventos.add(evento);
+			eventos.add(evento);	
+			
 		}
 	}
 	public void remover(Evento e) {
@@ -43,7 +45,7 @@ public class Calendario {
 	}
 	
 	public Evento buscarPorNome(String nome) {
-		if(nome != null && eventos != null) {
+		if(eventos != null) {
 			for(Evento ev: eventos) {
 				if(ev.getNome().equals(nome)) {
 					return ev;

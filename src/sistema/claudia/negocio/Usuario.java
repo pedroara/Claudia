@@ -18,8 +18,12 @@ public class Usuario {
 	
 	DateTimeFormatter formatter = DateTimeFormatter.ofPattern("dd-MM-yyyy");
 	
+	public RepositorioTag getTags() {
+		return reposTag;
+	}
+	
 	public Calendario getCalendar() {
-			return calendario;
+		return calendario;
 	}
 	
 	public Usuario(String nome, String dataDeNascimento, Escolaridade escolaridade, Calendario calendario, RepositorioTag reposTag) {

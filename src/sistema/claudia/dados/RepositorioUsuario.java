@@ -18,15 +18,26 @@ public class RepositorioUsuario {
 		repoUser.add(user);
 	}
 	
+//	public Usuario getUsuarioPeloNome(String nome) {
+//		if(repoUser != null) {
+//			for(int i = 0 ; i < repoUser.size(); i++) {
+//				if(nome == repoUser.get(i).getNome() && repoUser.get(i) != null) {
+//					return repoUser.get(i);
+//				}
+//			}
+//		}
+//		return null;
+//	}
 	public Usuario getUsuarioPeloNome(String nome) {
 		if(repoUser != null) {
-			for(int i = 0 ; i < repoUser.size(); i++) {
-				if(nome == repoUser.get(i).getNome() && repoUser.get(i) != null) {
-					return repoUser.get(i);
+			for(Usuario u: repoUser) {
+				if(u.getNome().equals(nome)) {
+					return u;
 				}
 			}
 		}
 		return null;
 	}
-
+	
+	
 }

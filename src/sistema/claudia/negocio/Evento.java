@@ -108,7 +108,7 @@ public class Evento {
 
 	@Override
 	public String toString() {
-		return "testeeeeeeeeeeeeeeee";
+		return this.nome;
 	}
 	
 	
