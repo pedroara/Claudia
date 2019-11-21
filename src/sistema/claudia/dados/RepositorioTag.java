@@ -4,6 +4,7 @@ import java.util.ArrayList;
 
 import sistema.claudia.negocio.Evento;
 import sistema.claudia.negocio.Tag;
+import sistema.claudia.dados.Calendario;
 
 public class RepositorioTag {
 
@@ -35,6 +36,22 @@ public class RepositorioTag {
 		if(evento != null) {
 			tag.getEventos().add(evento);
 		}
+		
+	}
+	
+	public ArrayList<String> listarTagsExistentes() {
+		ArrayList<String> tagsExistentes = new ArrayList<String>(); 
+		
+		for(int i = 0 ; i < tags.size(); i++) {
+			if(tagsExistentes.contains(tags.get(i).getNome())) {
+				
+			}else {
+				tagsExistentes.add(tags.get(i).getNome());
+			}
+		}
+		
+		return tagsExistentes;
+		
 		
 	}
 	
