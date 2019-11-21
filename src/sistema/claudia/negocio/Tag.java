@@ -4,6 +4,8 @@ import java.util.ArrayList;
 
 public class Tag { 
 	
+	//comentario de teste :)
+	
 	//Atributos:
 	private String nome;
 	private ArrayList <Evento> eventos;
