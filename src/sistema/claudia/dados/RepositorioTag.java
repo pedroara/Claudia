@@ -117,7 +117,8 @@ public class RepositorioTag {
 		if(tags != null && tag != null) {
 			for(Tag t: tags) {
 				if(t.getNome().equals(tag)) {
-					eventosDaTag.add(t.eventos);
+					//mudei de add pra addAll pq o eclispe pediu
+					eventosDaTag.addAll(t.eventos);
 				}
 			}
 			return eventosDaTag;
