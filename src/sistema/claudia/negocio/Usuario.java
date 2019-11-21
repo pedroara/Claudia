@@ -13,7 +13,7 @@ public class Usuario {
 	private int senha;
 	private LocalDate dataDeNascimento;
 	private Escolaridade escolaridade;
-	private Calendario calendario;
+	public Calendario calendario;
 	public RepositorioTag reposTag;
 	
 	DateTimeFormatter formatter = DateTimeFormatter.ofPattern("dd-MM-yyyy");

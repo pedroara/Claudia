@@ -12,7 +12,7 @@ public class Teste {
 		RepositorioUsuario repoUsers = new RepositorioUsuario();
 //		Calendario calendario = new Calendario();
 		RepositorioTag reposTag = new RepositorioTag();
-		Usuario testeUser = new Usuario("NomeTeste", "07-05-1999", Escolaridade.MEDIO, new Calendario(), reposTag );
+		Usuario testeUser = new Usuario("UsuarioTeste", "07-05-1999", Escolaridade.MEDIO, new Calendario(), reposTag );
 		repoUsers.adicionarUsuario(testeUser);
 		repoUsers.getUsuarioPeloNome(testeUser.getNome()).getCalendar().adicionar("Evento de teste", "Descricao de teste", "29-11-2012 00:00", "30-11-2012 00:00");
 		

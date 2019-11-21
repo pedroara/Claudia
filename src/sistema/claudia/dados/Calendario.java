@@ -9,7 +9,7 @@ public class Calendario {
 	private ArrayList<Evento> eventos;
 	
 	public Calendario() {
-		List<Evento> eventos = new ArrayList<>();
+		List<Evento> eventos = new ArrayList<Evento>();
 		Evento natal = new Evento ("Natal", "Feriado comercial", "25-12-2019 00:00", "26-12-2019 00:00");
 		eventos.add(natal);
 	}
