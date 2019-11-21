@@ -13,8 +13,9 @@ public class FachadaClaudia {
 	private static FachadaClaudia instance;
 	
 	private FachadaClaudia() {
+		FachadaClaudia.getInstance();
 		Calendario calendar = new Calendario();
-		this.controladorCalendario = new ControladorCalendario(calendar);
+		this.controladorCalendario = new ControladorCalendario(calendar); 
 	}
 	
 	public static FachadaClaudia getInstance() {
@@ -24,6 +25,7 @@ public class FachadaClaudia {
         return instance;
     }
 
+	
 	
 	
 	
