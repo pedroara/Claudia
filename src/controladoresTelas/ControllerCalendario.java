@@ -1,6 +1,7 @@
 package controladoresTelas;
 
 
+
 import java.net.URL;
 import java.time.LocalDateTime;
 import java.util.ArrayList;
@@ -15,77 +16,39 @@ import javafx.scene.control.TableView;
 import javafx.scene.control.cell.PropertyValueFactory;
 import sistema.claudia.negocio.Evento;
 import sistema.claudia.negocio.FachadaClaudia;
-
+import java.util.ArrayList;
 
 
 public class ControllerCalendario {
 
-    @FXML
-    private ResourceBundle resources;
-
-    @FXML
-    private URL location;
-
-    @FXML
-    private MenuBar DomingoID;
-
-    @FXML
-    private TableColumn<Evento, String> DomingoId;
-
-    @FXML
-    private TableColumn<?, ?> QuartaId;
-
-    @FXML
-    private TableColumn<?, ?> QuintaId;
-
-    @FXML
-    private TableColumn<?, ?> SabadoId;
-
-    @FXML
-    private TableColumn<?, ?> SegundaId;
-
-    @FXML
-    private TableColumn<?, ?> SextaId;
-
-    @FXML
-    private TableColumn<?, ?> TerçaId;
-
-    @FXML
-    private TableView<Evento> tabela;
-
-    //FachadaClaudia fachada = FachadaClaudia.getInstance();
+	
+	
+	
+	@FXML
+	private ResourceBundle rb;
+	
+	@FXML
+	private URL url;
+	
+	
+	@FXML
+	private ListView<String> listViewDomingo; 
     
-    
-    @FXML
-    void initialize() {
-        assert DomingoId != null : "fx:id=\"DomingoId\" was not injected: check your FXML file 'ClaudiaApp.fxml'.";
-        assert QuartaId != null : "fx:id=\"QuartaId\" was not injected: check your FXML file 'ClaudiaApp.fxml'.";
-        assert QuintaId != null : "fx:id=\"QuintaId\" was not injected: check your FXML file 'ClaudiaApp.fxml'.";
-        assert SabadoId != null : "fx:id=\"SabadoId\" was not injected: check your FXML file 'ClaudiaApp.fxml'.";
-        assert SegundaId != null : "fx:id=\"SegundaId\" was not injected: check your FXML file 'ClaudiaApp.fxml'.";
-        assert SextaId != null : "fx:id=\"SextaId\" was not injected: check your FXML file 'ClaudiaApp.fxml'.";
-        assert TerçaId != null : "fx:id=\"TerçaId\" was not injected: check your FXML file 'ClaudiaApp.fxml'.";
-        assert tabela != null : "fx:id=\"tabela\" was not injected: check your FXML file 'ClaudiaApp.fxml'.";
-        //inicializarTabela();
-
-    }
-
-    @FXML
-   	public void inicializarTabela() {
-   		
-     	
-     	ArrayList<Evento> lista = new ArrayList<Evento>();
-    	
-     	Evento ev1 = new Evento("Evento de teste lalala", "Descricao de teste", "29-11-2012 00:00", "30-11-2012 00:00");
-     	
-     	lista.add(ev1);
-     	
-   		DomingoId.setCellValueFactory(new PropertyValueFactory<>("nome"));
-   		tabela.setItems((ObservableList<Evento>)FXCollections.observableArrayList(lista));
-   		tabela.refresh();
-   	}
-
-    
+	public void initialize() {
+		
+		ArrayList <Evento> eventoss = new ArrayList <Evento>(); 
+		
+		Evento evento = new Evento("Evento de teste lalala", "Descricao de teste", "29-11-2012 00:00", "30-11-2012 00:00");
+		
+		eventoss.add(evento);
+		
+		ArrayList<String> eventosString = new ArrayList<String>();
+		eventosString.add(evento.getNome());
+		
+		ObservableList<String> data = FXCollections.observableArrayList("Teste 1" , "Teste 2");
+		
+		listViewDomingo.setItems(data);
+	}
 }
 
 
@@ -156,5 +119,72 @@ public class ControllerCalendario {
 //       // inicializarTabela();
 //
 //    }
+
+
+//@FXML
+//private ResourceBundle resources;
+//
+//@FXML
+//private URL location;
+//
+//@FXML
+//private MenuBar DomingoID;
+//
+//@FXML
+//private TableColumn<Evento, String> DomingoId;
+//
+//@FXML
+//private TableColumn<?, ?> QuartaId;
+//
+//@FXML
+//private TableColumn<?, ?> QuintaId;
+//
+//@FXML
+//private TableColumn<?, ?> SabadoId;
+//
+//@FXML
+//private TableColumn<?, ?> SegundaId;
+//
+//@FXML
+//private TableColumn<?, ?> SextaId;
+//
+//@FXML
+//private TableColumn<?, ?> TerçaId;
+//
+//@FXML
+//private TableView<Evento> tabela;
+//
+////FachadaClaudia fachada = FachadaClaudia.getInstance();
+//
+//
+//@FXML
+//void initialize() {
+//    assert DomingoId != null : "fx:id=\"DomingoId\" was not injected: check your FXML file 'ClaudiaApp.fxml'.";
+//    assert QuartaId != null : "fx:id=\"QuartaId\" was not injected: check your FXML file 'ClaudiaApp.fxml'.";
+//    assert QuintaId != null : "fx:id=\"QuintaId\" was not injected: check your FXML file 'ClaudiaApp.fxml'.";
+//    assert SabadoId != null : "fx:id=\"SabadoId\" was not injected: check your FXML file 'ClaudiaApp.fxml'.";
+//    assert SegundaId != null : "fx:id=\"SegundaId\" was not injected: check your FXML file 'ClaudiaApp.fxml'.";
+//    assert SextaId != null : "fx:id=\"SextaId\" was not injected: check your FXML file 'ClaudiaApp.fxml'.";
+//    assert TerçaId != null : "fx:id=\"TerçaId\" was not injected: check your FXML file 'ClaudiaApp.fxml'.";
+//    assert tabela != null : "fx:id=\"tabela\" was not injected: check your FXML file 'ClaudiaApp.fxml'.";
+//    //inicializarTabela();
+//
+//}
+//
+//@FXML
+//	public void inicializarTabela() {
+//		
+// 	
+// 	ArrayList<Evento> lista = new ArrayList<Evento>();
+//	
+// 	Evento ev1 = new Evento("Evento de teste lalala", "Descricao de teste", "29-11-2012 00:00", "30-11-2012 00:00");
+// 	
+// 	lista.add(ev1);
+// 	
+//		DomingoId.setCellValueFactory(new PropertyValueFactory<>("nome"));
+//		tabela.getItems().setAll(lista);
+//		//tabela.setItems((ObservableList<Evento>)FXCollections.observableArrayList(lista));
+//		tabela.refresh();
+//	}
 
 

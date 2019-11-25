@@ -5,25 +5,15 @@
 <?import javafx.scene.layout.*?>
 <?import javafx.scene.layout.AnchorPane?>
 
-<AnchorPane prefHeight="489.0" prefWidth="956.0" xmlns:fx="http://javafx.com/fxml/1" xmlns="http://javafx.com/javafx/2.2" fx:controller="controladoresTelas.ControllerCalendario">
+<AnchorPane prefHeight="500.0" prefWidth="1000.0" xmlns:fx="http://javafx.com/fxml/1" xmlns="http://javafx.com/javafx/2.2" fx:controller="controladoresTelas.ControllerCalendario">
   <children>
-    <MenuBar id="DomingoID" layoutX="0.0" layoutY="0.0" prefHeight="34.0" prefWidth="956.0">
+    <MenuBar id="DomingoID" layoutX="0.0" layoutY="0.0" prefHeight="34.0" prefWidth="1000.0">
       <menus>
         <Menu mnemonicParsing="false" text="Claudia" />
         <Menu mnemonicParsing="false" text="Calendario" />
         <Menu mnemonicParsing="false" text="Adicionar Evento" />
       </menus>
     </MenuBar>
-    <TableView id="tabela" layoutX="0.0" layoutY="138.0" prefHeight="337.0" prefWidth="956.0">
-      <columns>
-        <TableColumn maxWidth="5000.0" minWidth="10.0" prefWidth="138.0" text="Domingo" fx:id="DomingoId" />
-        <TableColumn maxWidth="5000.0" minWidth="10.0" prefWidth="130.0" text="Segunda" fx:id="SegundaId" />
-        <TableColumn maxWidth="5000.0" minWidth="10.0" prefWidth="139.0" text="Terça" fx:id="TerçaId" />
-        <TableColumn maxWidth="5000.0" minWidth="10.0" prefWidth="131.0" text="Quarta" fx:id="QuartaId" />
-        <TableColumn maxWidth="5000.0" minWidth="10.0" prefWidth="142.0" text="Quinta" fx:id="QuintaId" />
-        <TableColumn maxWidth="5000.0" minWidth="10.0" prefWidth="134.0" text="Sexta" fx:id="SextaId" />
-        <TableColumn maxWidth="5000.0" minWidth="10.0" prefWidth="144.0" text="Sábado" fx:id="SabadoId" />
-      </columns>
-    </TableView>
+    <ListView id="" fx:id="listViewDomingo" layoutX="7.0" layoutY="223.0" prefHeight="200.0" prefWidth="139.0" />
   </children>
 </AnchorPane>

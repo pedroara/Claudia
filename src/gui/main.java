@@ -14,7 +14,7 @@ public class main extends Application {
 			Parent root = FXMLLoader.load(getClass().getResource("/gui/ClaudiaApp.fxml"));
 			Scene cena = new Scene(root);
 			primaryStage.setScene(cena);
-			primaryStage.setTitle("Calendario");
+			primaryStage.setTitle("Claudia");
 			primaryStage.show();
 		} catch(Exception e) {
 			e.printStackTrace();
