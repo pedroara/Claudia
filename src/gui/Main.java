@@ -18,6 +18,7 @@ public class Main extends Application {
 		  thisClass = getClass();
 		 }
 	
+	 @Override
 	public void start(Stage primaryStage) {
 		
 		Main.primaryStage = primaryStage;
