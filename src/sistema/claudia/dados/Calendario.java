@@ -10,8 +10,23 @@ public class Calendario {
 	
 	public Calendario() {
 		eventos = new ArrayList<Evento>();
-		Evento natal = new Evento ("Natal", "Feriado comercial", "25-12-2019 00:00", "26-12-2019 00:00");
-		eventos.add(natal);
+		//Evento natal = new Evento ("Natal", "Feriado comercial", "25-12-2019 00:00", "26-12-2019 00:00");
+		Evento domingao = new Evento ("Domingao do Faustao", "Feriado mundial", "24-11-2019 00:00", "24-11-2019 23:59");
+		Evento segundao = new Evento ("Tela Quente" , "qq cosa" , "25-11-2019 00:00", "25-11-2019 23:59");
+		Evento terca = new Evento ("Terça Pop" , "qq cosa" , "26-11-2019 00:00", "26-11-2019 23:59");
+		Evento quarta = new Evento ("Dia do bingo qua" , "qq cosa" , "27-11-2019 00:00", "27-11-2019 23:59");
+		Evento quinta = new Evento ("Giro de Quinta" , "qq cosa" , "28-11-2019 00:00", "28-11-2019 23:59");
+		Evento sexta = new Evento ("Sextou/BlackFriday" , "qq cosa" , "29-11-2019 00:00", "29-11-2019 23:59");
+		Evento sabado = new Evento ("Dia de estudar poo" , "qq cosa" , "30-11-2019 00:00", "30-11-2019 23:59");
+		
+		//eventos.add(natal);
+		eventos.add(quarta);
+		eventos.add(sexta);
+		eventos.add(quinta);
+		eventos.add(sabado);
+		eventos.add(segundao);
+		eventos.add(terca);
+		eventos.add(domingao);
 	}
 	
 	public Evento BuscarEventoPeloNome (String nome) {

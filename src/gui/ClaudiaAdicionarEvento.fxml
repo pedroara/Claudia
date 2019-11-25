@@ -1,0 +1,25 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import java.lang.*?>
+<?import javafx.scene.control.*?>
+<?import javafx.scene.layout.*?>
+<?import javafx.scene.layout.AnchorPane?>
+<?import javafx.scene.text.*?>
+
+<AnchorPane minWidth="1037.0" prefHeight="500.0" prefWidth="1037.0" xmlns:fx="http://javafx.com/fxml/1" xmlns="http://javafx.com/javafx/2.2" fx:controller="controladoresTelas.ControllerClaudiaApp">
+  <children>
+    <ToolBar layoutX="1.0" layoutY="0.0" prefWidth="1041.0">
+      <items>
+        <Button fx:id="ClaudiaHome" mnemonicParsing="false" text="Claudia" />
+        <Button fx:id="ClaudiaPesquisar" mnemonicParsing="false" text="Pesquisar por Dia" />
+        <Button fx:id="ClaudiaAdicionar" mnemonicParsing="false" text="Adicionar Evento" />
+      </items>
+    </ToolBar>
+    <Text layoutX="2.57637984E8" layoutY="255.0" strokeType="OUTSIDE" strokeWidth="0.0" text="Text" />
+    <Label layoutX="27.0" layoutY="46.0" prefHeight="45.0" prefWidth="200.0" text="Adicionar Evento">
+      <font>
+        <Font name="Lucida Sans Regular" size="21.0" />
+      </font>
+    </Label>
+  </children>
+</AnchorPane>

@@ -1,6 +1,7 @@
 package sistema.claudia.negocio;
 
 
+import java.time.DayOfWeek;
 import java.time.LocalDateTime;
 import java.util.ArrayList;
 
@@ -42,6 +43,91 @@ public class FachadaClaudia {
 	
 	public Evento CadastrarEvento(String nome, String descricao, String dataInicio, String dataFim) {
 		return new Evento(nome, descricao, dataInicio, dataFim);
+	}
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	public ArrayList<String> getListDomingo(){
+		ArrayList<String> eventossDoDia = new  ArrayList<String>();
+		for (int i = 0 ; i < calendario.getEventos().size(); i++) {
+			LocalDateTime.now().getDayOfWeek();
+			if(calendario.getEventos().get(i).getDataHoraInicio().getDayOfWeek() == DayOfWeek.SUNDAY) {
+				eventossDoDia.add(calendario.getEventos().get(i).getNome());
+			}
+		}
+		return eventossDoDia;
+	}
+	
+	public ArrayList<String> getListSegunda(){
+		ArrayList<String> eventossDoDia = new  ArrayList<String>();
+		for (int i = 0 ; i < calendario.getEventos().size(); i++) {
+			LocalDateTime.now().getDayOfWeek();
+			if(calendario.getEventos().get(i).getDataHoraInicio().getDayOfWeek() == DayOfWeek.MONDAY) {
+				eventossDoDia.add(calendario.getEventos().get(i).getNome());
+			}
+		}
+		return eventossDoDia;
+	}
+	
+	public ArrayList<String> getListTerca(){
+		ArrayList<String> eventossDoDia = new  ArrayList<String>();
+		for (int i = 0 ; i < calendario.getEventos().size(); i++) {
+			LocalDateTime.now().getDayOfWeek();
+			if(calendario.getEventos().get(i).getDataHoraInicio().getDayOfWeek() == DayOfWeek.TUESDAY) {
+				eventossDoDia.add(calendario.getEventos().get(i).getNome());
+			}
+		}
+		return eventossDoDia;
+	}
+	
+	public ArrayList<String> getListQuarta(){
+		ArrayList<String> eventossDoDia = new  ArrayList<String>();
+		for (int i = 0 ; i < calendario.getEventos().size(); i++) {
+			LocalDateTime.now().getDayOfWeek();
+			if(calendario.getEventos().get(i).getDataHoraInicio().getDayOfWeek() == DayOfWeek.WEDNESDAY) {
+				eventossDoDia.add(calendario.getEventos().get(i).getNome());
+			}
+		}
+		return eventossDoDia;
+	}
+	
+	public ArrayList<String> getListQuinta(){
+		ArrayList<String> eventossDoDia = new  ArrayList<String>();
+		for (int i = 0 ; i < calendario.getEventos().size(); i++) {
+			LocalDateTime.now().getDayOfWeek();
+			if(calendario.getEventos().get(i).getDataHoraInicio().getDayOfWeek() == DayOfWeek.THURSDAY) {
+				eventossDoDia.add(calendario.getEventos().get(i).getNome());
+			}
+		}
+		return eventossDoDia;
+	}
+	
+	public ArrayList<String> getListSexta(){
+		ArrayList<String> eventossDoDia = new  ArrayList<String>();
+		for (int i = 0 ; i < calendario.getEventos().size(); i++) {
+			LocalDateTime.now().getDayOfWeek();
+			if(calendario.getEventos().get(i).getDataHoraInicio().getDayOfWeek() == DayOfWeek.FRIDAY) {
+				eventossDoDia.add(calendario.getEventos().get(i).getNome());
+			}
+		}
+		return eventossDoDia;
+	}
+	
+	public ArrayList<String> getListSabado(){
+		ArrayList<String> eventossDoDia = new  ArrayList<String>();
+		for (int i = 0 ; i < calendario.getEventos().size(); i++) {
+			LocalDateTime.now().getDayOfWeek();
+			if(calendario.getEventos().get(i).getDataHoraInicio().getDayOfWeek() == DayOfWeek.SATURDAY) {
+				eventossDoDia.add(calendario.getEventos().get(i).getNome());
+			}
+		}
+		return eventossDoDia;
 	}
 	
 	public ArrayList<String> getListNomeEventoDoDia (LocalDateTime dia) {
