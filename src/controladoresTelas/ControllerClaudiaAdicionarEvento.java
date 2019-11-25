@@ -49,9 +49,7 @@ public class ControllerClaudiaAdicionarEvento {
 		 ClaudiaHome.setOnAction(new EventHandler<ActionEvent>() {
 
 				@Override
-				public void handle(ActionEvent event) {Main.loadScene("/gui/ClaudiaApp.fxml", "Claudia");}} );
-		 
-		
+				public void handle(ActionEvent event) {Main.loadScene("/gui/homeClaudia.fxml", "Claudia");}} );
 		 
 	 }
 	 

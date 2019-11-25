@@ -25,7 +25,7 @@ public class Main extends Application {
 		Main.primaryStage = primaryStage;
 
 		try {
-			Parent root = FXMLLoader.load(getClass().getResource("/gui/ClaudiaApp.fxml"));
+			Parent root = FXMLLoader.load(getClass().getResource("/gui/homeClaudia.fxml"));
 			Scene scene = new Scene(root);
 			primaryStage.setScene(scene);
 			primaryStage.setTitle("Claudia");

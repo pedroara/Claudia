@@ -27,6 +27,15 @@ public class ControllerClaudiaApp {
 	@FXML
 	private URL url;
 	
+	 @FXML
+	 private Button ClaudiaBtn;
+
+    @FXML
+    private Button PesquisarBtn;
+
+    @FXML
+    private Button AdiconarBtn;
+	
 	@FXML
 	private ListView<String> listViewDomingo; 
     
@@ -64,13 +73,13 @@ public class ControllerClaudiaApp {
     
 	public void initialize() {
 			
-		ClaudiaAdicionar.setOnAction(new EventHandler<ActionEvent>() {
-				@Override
-				public void handle(ActionEvent event) 
-				{
-					Main.loadScene("/gui/ClaudiaAdicionarEvento.fxml", "Adicionar Evento");
-				}
-			} );
+//		ClaudiaAdicionar.setOnAction(new EventHandler<ActionEvent>() {
+//				@Override
+//				public void handle(ActionEvent event) 
+//				{
+//					Main.loadScene("/gui/ClaudiaAdicionarEvento.fxml", "Adicionar Evento");
+//				}
+//			} );
 
 		
 		ObservableList<String> dataDom = FXCollections.observableArrayList(fachadaClaudia.getListDomingo());
