@@ -6,35 +6,67 @@
 <?import javafx.scene.layout.AnchorPane?>
 <?import javafx.scene.text.*?>
 
-<AnchorPane minWidth="1037.0" prefHeight="500.0" prefWidth="1037.0" xmlns:fx="http://javafx.com/fxml/1" xmlns="http://javafx.com/javafx/2.2" fx:controller="controladoresTelas.ControllerClaudiaApp">
-  <children>
-    <ToolBar layoutX="1.0" layoutY="0.0" prefWidth="1041.0">
-      <items>
-        <Button fx:id="ClaudiaHome" mnemonicParsing="false" text="Claudia" />
-        <Button fx:id="ClaudiaPesquisar" mnemonicParsing="false" text="Pesquisar por Dia" />
-        <Button fx:id="ClaudiaAdicionar" mnemonicParsing="false" text="Adicionar Evento" />
-      </items>
-    </ToolBar>
-    <ListView id="" fx:id="listViewDomingo" layoutX="7.0" layoutY="188.0" prefHeight="305.0" prefWidth="139.0" />
-    <ListView fx:id="listViewSegunda" layoutX="153.0" layoutY="188.0" prefHeight="305.0" prefWidth="139.0" />
-    <ListView fx:id="listViewTerca" layoutX="301.0" layoutY="188.0" prefHeight="305.0" prefWidth="139.0" />
-    <ListView fx:id="listViewQuarta" layoutX="451.0" layoutY="188.0" prefHeight="305.0" prefWidth="139.0" />
-    <ListView fx:id="listViewQuinta" layoutX="597.0" layoutY="188.0" prefHeight="305.0" prefWidth="139.0" />
-    <ListView fx:id="listViewSexta" layoutX="743.0" layoutY="188.0" prefHeight="305.0" prefWidth="139.0" />
-    <ListView fx:id="listViewSabado" layoutX="891.0" layoutY="188.0" prefHeight="305.0" prefWidth="139.0" />
-    <Text layoutX="52.0" layoutY="171.0" scaleX="1.478466653423922" scaleY="1.6265295865332166" strokeType="OUTSIDE" strokeWidth="0.0" text="Domingo" />
-    <Text layoutX="199.0" layoutY="171.0" scaleX="1.478466653423922" scaleY="1.6265295865332166" strokeType="OUTSIDE" strokeWidth="0.0" text="Segunda" />
-    <Text layoutX="356.0" layoutY="171.0" scaleX="1.478466653423922" scaleY="1.6265295865332166" strokeType="OUTSIDE" strokeWidth="0.0" text="Terça" />
-    <Text layoutX="502.0" layoutY="171.0" scaleX="1.5886986212140382" scaleY="1.6265295865332166" strokeType="OUTSIDE" strokeWidth="0.0" text="Quarta" />
-    <Text layoutX="649.0" layoutY="171.0" scaleX="1.612601671725937" scaleY="1.6265295865332166" strokeType="OUTSIDE" strokeWidth="0.0" text="Quinta" />
-    <Text layoutX="798.0" layoutY="171.0" scaleX="1.5163090419882164" scaleY="1.6265295865332166" strokeType="OUTSIDE" strokeWidth="0.0" text="Sexta" />
-    <Text layoutX="941.0" layoutY="171.0" scaleX="1.495119136691857" scaleY="1.6265295865332166" strokeType="OUTSIDE" strokeWidth="0.0" text="Sábado" />
-    <Text fx:id="StringDomingo" layoutX="5.15275963E8" layoutY="121.0" scaleX="1.8956293012175754E12" scaleY="2.1302006852667645" strokeType="OUTSIDE" strokeWidth="0.0" text="" />
-    <Text layoutX="2.57637984E8" layoutY="255.0" strokeType="OUTSIDE" strokeWidth="0.0" text="Text" />
-    <Label fx:id="textoNaTela" layoutX="62.0" layoutY="59.0" prefHeight="41.0" prefWidth="139.0" text="Texto">
-      <font>
-        <Font size="20.0" />
-      </font>
-    </Label>
-  </children>
+<AnchorPane minWidth="1037.0" prefHeight="500.0"
+	prefWidth="1037.0" xmlns:fx="http://javafx.com/fxml/1"
+	xmlns="http://javafx.com/javafx/2.2"
+	fx:controller="controladoresTelas.ControllerClaudiaApp">
+	<children>
+		<ToolBar layoutX="1.0" layoutY="0.0" prefWidth="1041.0">
+			<items>
+				<Button fx:id="ClaudiaHome" mnemonicParsing="false"
+					text="Claudia" />
+				<Button fx:id="ClaudiaPesquisar" mnemonicParsing="false"
+					text="Pesquisar por Dia" />
+				<Button fx:id="ClaudiaAdicionar" mnemonicParsing="false"
+					text="Adicionar Evento" />
+			</items>
+		</ToolBar>
+		<ListView id="" fx:id="listViewDomingo" layoutX="7.0"
+			layoutY="188.0" prefHeight="305.0" prefWidth="139.0" />
+		<ListView fx:id="listViewSegunda" layoutX="153.0"
+			layoutY="188.0" prefHeight="305.0" prefWidth="139.0" />
+		<ListView fx:id="listViewTerca" layoutX="301.0"
+			layoutY="188.0" prefHeight="305.0" prefWidth="139.0" />
+		<ListView fx:id="listViewQuarta" layoutX="451.0"
+			layoutY="188.0" prefHeight="305.0" prefWidth="139.0" />
+		<ListView fx:id="listViewQuinta" layoutX="597.0"
+			layoutY="188.0" prefHeight="305.0" prefWidth="139.0" />
+		<ListView fx:id="listViewSexta" layoutX="743.0"
+			layoutY="188.0" prefHeight="305.0" prefWidth="139.0" />
+		<ListView fx:id="listViewSabado" layoutX="891.0"
+			layoutY="188.0" prefHeight="305.0" prefWidth="139.0" />
+		<Text layoutX="52.0" layoutY="171.0" scaleX="1.478466653423922"
+			scaleY="1.6265295865332166" strokeType="OUTSIDE" strokeWidth="0.0"
+			text="Domingo" />
+		<Text layoutX="199.0" layoutY="171.0" scaleX="1.478466653423922"
+			scaleY="1.6265295865332166" strokeType="OUTSIDE" strokeWidth="0.0"
+			text="Segunda" />
+		<Text layoutX="356.0" layoutY="171.0" scaleX="1.478466653423922"
+			scaleY="1.6265295865332166" strokeType="OUTSIDE" strokeWidth="0.0"
+			text="Terça" />
+		<Text layoutX="502.0" layoutY="171.0" scaleX="1.5886986212140382"
+			scaleY="1.6265295865332166" strokeType="OUTSIDE" strokeWidth="0.0"
+			text="Quarta" />
+		<Text layoutX="649.0" layoutY="171.0" scaleX="1.612601671725937"
+			scaleY="1.6265295865332166" strokeType="OUTSIDE" strokeWidth="0.0"
+			text="Quinta" />
+		<Text layoutX="798.0" layoutY="171.0" scaleX="1.5163090419882164"
+			scaleY="1.6265295865332166" strokeType="OUTSIDE" strokeWidth="0.0"
+			text="Sexta" />
+		<Text layoutX="941.0" layoutY="171.0" scaleX="1.495119136691857"
+			scaleY="1.6265295865332166" strokeType="OUTSIDE" strokeWidth="0.0"
+			text="Sábado" />
+		<Text fx:id="StringDomingo" layoutX="5.15275963E8"
+			layoutY="121.0" scaleX="1.8956293012175754E12"
+			scaleY="2.1302006852667645" strokeType="OUTSIDE" strokeWidth="0.0"
+			text="" />
+		<Text layoutX="2.57637984E8" layoutY="255.0" strokeType="OUTSIDE"
+			strokeWidth="0.0" text="Text" />
+		<Label fx:id="textoNaTela" layoutX="62.0" layoutY="59.0"
+			prefHeight="41.0" prefWidth="139.0" text="Texto">
+			<font>
+				<Font size="20.0" />
+			</font>
+		</Label>
+	</children>
 </AnchorPane>
