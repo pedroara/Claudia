@@ -21,12 +21,12 @@ public class FachadaClaudia {
 	
 	
 	private static FachadaClaudia instance;
-	private ControladorCalendario controladorCalendario;
+	private Calendario calendario;
 	
 	private FachadaClaudia() {
-		FachadaClaudia.getInstance();
+		//FachadaClaudia.getInstance();
 		Calendario calendario = new Calendario();
-		this.controladorCalendario = new ControladorCalendario(calendario); 
+		this.calendario = new Calendario(); 
 	}
 
 	public static FachadaClaudia getInstance() {
@@ -36,23 +36,26 @@ public class FachadaClaudia {
         return instance;
     }
 	
+	public void setTestes() {
+		
+	}
+	
 	public Evento CadastrarEvento(String nome, String descricao, String dataInicio, String dataFim) {
-		Evento evento = new Evento(nome, descricao, dataInicio, dataFim);
-		return evento;
+		return new Evento(nome, descricao, dataInicio, dataFim);
 	}
 	
 	public ArrayList<String> getListNomeEventoDoDia (LocalDateTime dia) {
 		ArrayList<String> eventosDoDia = new  ArrayList<String>();
-		for (int i = 0 ; i < controladorCalendario.getArrayEvento().size(); i++) {
-			if(dia == controladorCalendario.getArrayEvento().get(i).getDataHoraInicio()) {
-				eventosDoDia.add(controladorCalendario.getArrayEvento().get(i).getNome());
+		for (int i = 0 ; i < calendario.getEventos().size(); i++) {
+			if(dia.getMonthValue() == calendario.getEventos().get(i).getDataHoraInicio().getMonthValue() && dia.getDayOfMonth() == calendario.getEventos().get(i).getDataHoraInicio().getDayOfMonth() && dia.getYear() == calendario.getEventos().get(i).getDataHoraInicio().getYear()) {
+				eventosDoDia.add(calendario.getEventos().get(i).getNome());
 			}
 		}
 		return eventosDoDia;
 	}
 	
-	public void adicionarEvento(Evento e) throws EventoJaExistenteException {
-		controladorCalendario.cadastrar(e);
+	public void adicionarEvento(String nome, String descricao, String dataHoraInicio, String dataHoraFim) throws EventoJaExistenteException {
+		calendario.adicionar(nome, descricao, dataHoraInicio, dataHoraFim);;
 	}
 	
 	

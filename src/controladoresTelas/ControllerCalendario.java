@@ -14,6 +14,7 @@ import javafx.scene.control.MenuBar;
 import javafx.scene.control.TableColumn;
 import javafx.scene.control.TableView;
 import javafx.scene.control.cell.PropertyValueFactory;
+import sistema.claudia.exceptions.EventoJaExistenteException;
 import sistema.claudia.negocio.Evento;
 import sistema.claudia.negocio.FachadaClaudia;
 import java.util.ArrayList;
@@ -22,7 +23,7 @@ import java.util.ArrayList;
 public class ControllerCalendario {
 
 	
-	
+	private final FachadaClaudia fachadaClaudia = FachadaClaudia.getInstance();
 	
 	@FXML
 	private ResourceBundle rb;
@@ -34,18 +35,22 @@ public class ControllerCalendario {
 	@FXML
 	private ListView<String> listViewDomingo; 
     
+	public void eventoClicado() {
+		
+	}
+	
 	public void initialize() {
-		
-		ArrayList <Evento> eventoss = new ArrayList <Evento>(); 
-		
-		Evento evento = new Evento("Evento de teste lalala", "Descricao de teste", "29-11-2012 00:00", "30-11-2012 00:00");
-		
-		eventoss.add(evento);
-		
-		ArrayList<String> eventosString = new ArrayList<String>();
-		eventosString.add(evento.getNome());
-		
-		ObservableList<String> data = FXCollections.observableArrayList("Teste 1" , "Teste 2");
+		//EXEMPLO
+//		ArrayList <Evento> eventoss = new ArrayList <Evento>(); 
+//		
+//		Evento evento = new Evento("Evento de teste lalala", "Descricao de teste", "29-11-2012 00:00", "30-11-2012 00:00");
+//		
+//		eventoss.add(evento);
+//		
+//		ArrayList<String> eventosString = new ArrayList<String>();
+//		eventosString.add(evento.getNome());
+		fachadaClaudia.CadastrarEvento("Teste porfavor pega", "porfavor plis pega", "24-11-2019 00:30", "24-11-2019 23:58");
+		ObservableList<String> data = FXCollections.observableArrayList(fachadaClaudia.getListNomeEventoDoDia(LocalDateTime.of(2019, 12, 25, 00, 00)));
 		
 		listViewDomingo.setItems(data);
 	}
