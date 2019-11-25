@@ -7,6 +7,7 @@ import javafx.fxml.FXML;
 import java.net.URL;
 import java.util.ResourceBundle;
 import javafx.scene.control.Button;
+import javafx.scene.control.TextArea;
 import sistema.claudia.negocio.FachadaClaudia;
 
 
@@ -29,9 +30,22 @@ public class ControllerClaudiaAdicionarEvento {
     @FXML
     private Button ClaudiaPesquisar;
     
+    @FXML
+    private TextArea dataDoFinal;
+
+    @FXML
+    private TextArea dataDoInicio;
+
+    @FXML
+    private TextArea descricaoDoEvento;
+
+    @FXML
+    private TextArea nomeDoEvento;
+    
 
 	 @FXML
 	 public void  initialize() {
+		 
 		 ClaudiaHome.setOnAction(new EventHandler<ActionEvent>() {
 
 				@Override

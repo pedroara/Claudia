@@ -6,28 +6,34 @@
 <?import javafx.scene.layout.AnchorPane?>
 <?import javafx.scene.text.*?>
 
-<AnchorPane minWidth="1037.0" prefHeight="500.0"
-	prefWidth="1037.0" xmlns:fx="http://javafx.com/fxml/1"
-	xmlns="http://javafx.com/javafx/2.2"
-	fx:controller="controladoresTelas.ControllerClaudiaApp">
-	<children>
-		<ToolBar layoutX="1.0" layoutY="0.0" prefWidth="1041.0">
-			<items>
-				<Button fx:id="ClaudiaHome" mnemonicParsing="false"
-					text="Claudia" />
-				<Button fx:id="ClaudiaPesquisar" mnemonicParsing="false"
-					text="Pesquisar por Dia" />
-				<Button fx:id="ClaudiaAdicionar" mnemonicParsing="false"
-					text="Adicionar Evento" />
-			</items>
-		</ToolBar>
-		<Text layoutX="2.57637984E8" layoutY="255.0" strokeType="OUTSIDE"
-			strokeWidth="0.0" text="Text" />
-		<Label layoutX="27.0" layoutY="46.0" prefHeight="45.0"
-			prefWidth="200.0" text="Adicionar Evento">
-			<font>
-				<Font name="Lucida Sans Regular" size="21.0" />
-			</font>
-		</Label>
-	</children>
+<AnchorPane minWidth="1037.0" prefHeight="500.0" prefWidth="1037.0" xmlns:fx="http://javafx.com/fxml/1" xmlns="http://javafx.com/javafx/2.2" fx:controller="controladoresTelas.ControllerClaudiaAdicionarEvento">
+  <children>
+    <ToolBar layoutX="1.0" layoutY="0.0" prefWidth="1041.0">
+      <items>
+        <Button fx:id="ClaudiaHome" mnemonicParsing="false" text="Claudia" />
+        <Button fx:id="ClaudiaPesquisar" mnemonicParsing="false" text="Pesquisar por Dia" />
+        <Button fx:id="ClaudiaAdicionar" mnemonicParsing="false" text="Adicionar Evento" />
+      </items>
+    </ToolBar>
+    <Text layoutX="2.57637984E8" layoutY="255.0" strokeType="OUTSIDE" strokeWidth="0.0" text="Text" />
+    <Label layoutX="27.0" layoutY="46.0" prefHeight="45.0" prefWidth="200.0" text="Adicionar Evento">
+      <font>
+        <Font name="Lucida Sans Regular" size="21.0" />
+      </font>
+    </Label>
+    <Label id="nomeDoEvento" layoutX="27.0" layoutY="108.0" prefHeight="31.0" prefWidth="123.0" text="Nome do evento:" />
+    <TextArea layoutX="1.28818896E8" layoutY="165.0" prefWidth="200.0" wrapText="true" />
+    <TextArea layoutX="1.28818912E8" layoutY="175.0" prefWidth="200.0" wrapText="true" />
+    <TextArea fx:id="nomeDoEvento" layoutX="132.0" layoutY="108.0" prefHeight="31.0" prefWidth="252.0" wrapText="true" />
+    <Text layoutX="1.28818976E8" layoutY="255.0" strokeType="OUTSIDE" strokeWidth="0.0" text="Text" />
+    <TextArea fx:id="descricaoDoEvento" layoutX="132.0" layoutY="160.0" prefHeight="31.0" prefWidth="472.0" wrapText="true" />
+    <TextArea layoutX="1.28818896E8" layoutY="165.0" prefWidth="200.0" wrapText="true" />
+    <TextArea layoutX="1.28818912E8" layoutY="175.0" prefWidth="200.0" wrapText="true" />
+    <TextArea layoutX="1.28818928E8" layoutY="185.0" prefWidth="200.0" wrapText="true" />
+    <TextArea fx:id="dataDoInicio" layoutX="247.0" layoutY="219.0" prefHeight="31.0" prefWidth="252.0" wrapText="true" />
+    <TextArea fx:id="dataDoFinal" layoutX="247.0" layoutY="275.0" prefHeight="31.0" prefWidth="252.0" wrapText="true" />
+    <Label layoutX="27.0" layoutY="160.0" prefHeight="31.0" prefWidth="82.0" text="Descrição:" />
+    <Label layoutX="26.0" layoutY="226.0" text="Data Incio (Dia-Mês-Ano Hora:Minutos:" />
+    <Label layoutX="26.0" layoutY="282.0" text="Data Fim (Dia-Mês-Ano Hora:Minutos:" />
+  </children>
 </AnchorPane>
