@@ -2,6 +2,7 @@ package controladoresTelas;
 
 import java.net.URL;
 import java.time.LocalDateTime;
+import java.util.Calendar;
 import java.util.ResourceBundle;
 import gui.Main;
 import javafx.collections.FXCollections;
@@ -87,20 +88,32 @@ public class ControllerClaudiaApp {
 
     @FXML
     private Label sextaDia;
-    
+
+    @FXML
+    private Label sabadoDia;
     
     
 	public void initialize() {
 			
-//		ClaudiaAdicionar.setOnAction(new EventHandler<ActionEvent>() {
-//				@Override
-//				public void handle(ActionEvent event) 
-//				{
-//					Main.loadScene("/gui/ClaudiaAdicionarEvento.fxml", "Adicionar Evento");
-//				}
-//			} );
+		//ClaudiaAdicionar.setOnAction(new EventHandler<ActionEvent>() { @Override public void handle(ActionEvent event) {Main.loadScene("/gui/addEvento.fxml", "Adicionar Evento");} } );
 		
-		segundaDia.setText(LocalDateTime.now().toString());
+		Calendar c = Calendar.getInstance();
+		
+		c.setWeekDate(c.get(Calendar.YEAR), c.get(Calendar.WEEK_OF_YEAR), 1);
+		domingoDia.setText("" + c.get(Calendar.DAY_OF_MONTH));
+		c.add(Calendar.DAY_OF_MONTH, 1);
+		segundaDia.setText("" + c.get(Calendar.DAY_OF_MONTH));
+		c.add(Calendar.DAY_OF_MONTH, 1);
+		tercaDia.setText(""+ c.get(Calendar.DAY_OF_MONTH));
+		c.add(Calendar.DAY_OF_MONTH, 1);
+		quartaDia.setText("" + c.get(Calendar.DAY_OF_MONTH));
+		c.add(Calendar.DAY_OF_MONTH, 1);
+		quintaDia.setText("" + c.get(Calendar.DAY_OF_MONTH));
+		c.add(Calendar.DAY_OF_MONTH, 1);
+		sextaDia.setText("" + c.get(Calendar.DAY_OF_MONTH));
+		c.add(Calendar.DAY_OF_MONTH, 1);
+		sabadoDia.setText("" + c.get(Calendar.DAY_OF_MONTH));
+		
 		
 		ObservableList<String> dataDom = FXCollections.observableArrayList(fachadaClaudia.getListDomingo());
 		ObservableList<String> dataSeg = FXCollections.observableArrayList(fachadaClaudia.getListSegunda());
@@ -120,11 +133,6 @@ public class ControllerClaudiaApp {
 		listViewSabado.setItems(dataSab);
 		}
 	}
-	
-//	 @FXML
-//	 public void irAdicionarEvento() {
-//	  Main.loadScene("/gui/ClaudiaAdicionarEvento.fxml", "Adicionar Evento");
-//	 }
 	
 	
 }

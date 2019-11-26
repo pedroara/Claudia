@@ -65,6 +65,6 @@
       <Label fx:id="quartaDia" layoutX="505.0" layoutY="90.0" text="XX" />
       <Label fx:id="quintaDia" layoutX="653.0" layoutY="90.0" text="XX" />
       <Label fx:id="sextaDia" layoutX="807.0" layoutY="90.0" text="XX" />
-      <Label layoutX="947.0" layoutY="90.0" text="XX" />
+      <Label fx:id="sabadoDia" layoutX="947.0" layoutY="90.0" text="XX" />
    </children>
 </AnchorPane>
