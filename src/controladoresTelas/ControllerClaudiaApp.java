@@ -59,15 +59,6 @@ public class ControllerClaudiaApp {
 	@FXML
 	private ListView<String> listViewTerca;
 
-	@FXML
-    private Button ClaudiaAdicionar;
-
-    @FXML
-    private Button ClaudiaHome;
-
-    @FXML
-    private Button ClaudiaPesquisar;
-
     @FXML
     private Label textoNaTela;
 
@@ -95,7 +86,7 @@ public class ControllerClaudiaApp {
     
 	public void initialize() {
 			
-		//ClaudiaAdicionar.setOnAction(new EventHandler<ActionEvent>() { @Override public void handle(ActionEvent event) {Main.loadScene("/gui/addEvento.fxml", "Adicionar Evento");} } );
+		AdiconarBtn.setOnAction(new EventHandler<ActionEvent>() { @Override public void handle(ActionEvent event) {Main.loadScene("/gui/addEvento.fxml", "Adicionar Evento");} } );
 		
 		Calendar c = Calendar.getInstance();
 		

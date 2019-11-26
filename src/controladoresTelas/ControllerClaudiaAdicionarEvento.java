@@ -21,44 +21,23 @@ public class ControllerClaudiaAdicionarEvento {
 	@FXML
 	private URL url;
 
-    @FXML
-    private Button ClaudiaAdicionar;
 
     @FXML
-    private Button ClaudiaHome;
+    private Button ClaudiaBtn;
 
     @FXML
-    private Button ClaudiaPesquisar;
-    
-    @FXML
-    private TextArea dataDoFinal;
+    private Button PesquisarBtn;
 
     @FXML
-    private TextArea dataDoInicio;
-
-    @FXML
-    private TextArea descricaoDoEvento;
-
-    @FXML
-    private TextArea nomeDoEvento;
-    
+    private Button AdiconarBtn;
 
 	 @FXML
 	 public void  initialize() {
 		 
-		 ClaudiaHome.setOnAction(new EventHandler<ActionEvent>() {
+		 ClaudiaBtn.setOnAction(new EventHandler<ActionEvent>() {
 
 				@Override
 				public void handle(ActionEvent event) {Main.loadScene("/gui/homeClaudia.fxml", "Claudia");}} );
 		 
 	 }
-	 
-	 
-
-	
-//	 @FXML
-//	  public void homeClaudia() {
-//	  Main.loadScene("/gui/ClaudiaApp.fxml", "Claudia");
-//	 }
-	
 }
