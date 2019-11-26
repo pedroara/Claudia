@@ -1,6 +1,7 @@
 package controladoresTelas;
 
-import java.net.URL; 
+import java.net.URL;
+import java.time.LocalDateTime;
 import java.util.ResourceBundle;
 import gui.Main;
 import javafx.collections.FXCollections;
@@ -27,8 +28,8 @@ public class ControllerClaudiaApp {
 	@FXML
 	private URL url;
 	
-	 @FXML
-	 private Button ClaudiaBtn;
+	@FXML
+	private Button ClaudiaBtn;
 
     @FXML
     private Button PesquisarBtn;
@@ -69,6 +70,24 @@ public class ControllerClaudiaApp {
     @FXML
     private Label textoNaTela;
 
+    @FXML
+    private Label segundaDia;
+
+    @FXML
+    private Label domingoDia;
+
+    @FXML
+    private Label tercaDia;
+
+    @FXML
+    private Label quartaDia;
+
+    @FXML
+    private Label quintaDia;
+
+    @FXML
+    private Label sextaDia;
+    
     
     
 	public void initialize() {
@@ -80,7 +99,8 @@ public class ControllerClaudiaApp {
 //					Main.loadScene("/gui/ClaudiaAdicionarEvento.fxml", "Adicionar Evento");
 //				}
 //			} );
-
+		
+		segundaDia.setText(LocalDateTime.now().toString());
 		
 		ObservableList<String> dataDom = FXCollections.observableArrayList(fachadaClaudia.getListDomingo());
 		ObservableList<String> dataSeg = FXCollections.observableArrayList(fachadaClaudia.getListSegunda());
