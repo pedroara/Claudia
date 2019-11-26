@@ -45,13 +45,9 @@ public class FachadaClaudia {
 		return new Evento(nome, descricao, dataInicio, dataFim);
 	}
 	
-	
-	
-	
-	
-	
-	
-	
+	public void remover(Evento e) {
+		
+	}
 	
 	public ArrayList<String> getListDomingo(){
 		ArrayList<String> eventossDoDia = new  ArrayList<String>();

@@ -14,11 +14,15 @@ import java.util.ArrayList;
 import java.util.Date;
 import java.util.ResourceBundle;
 import javax.swing.text.DateFormatter;
+
+import br.com.banco.model.domain.Cliente;
 import javafx.scene.control.Button;
 import javafx.scene.control.DatePicker;
 import javafx.scene.control.Label;
+import javafx.scene.control.ListView;
 import javafx.scene.control.TextArea;
 import javafx.scene.control.TextField;
+import javafx.scene.input.MouseEvent;
 import sistema.claudia.dados.Calendario;
 import sistema.claudia.exceptions.DataIncoerenteException;
 import sistema.claudia.exceptions.EventoJaExistenteException;
@@ -85,14 +89,6 @@ public class ControllerClaudiaAdicionarEvento {
 	 public void cadastrar() throws EventoJaExistenteException, DataIncoerenteException {
 		 if(nomeId != null && dataHoraInicioId.getValue() != null && dataHoraFimId.getValue() != null) {
 			 DateTimeFormatter formatter = DateTimeFormatter.ofPattern("dd-MM-yyyy HH:mm");
-			 //DateTimeFormatter formatterDate = DateTimeFormatter.ofPattern("dd-MM-yyyy");
-			 
-			 //formatterDate.format(dataHoraInicioId.getValue());
-			 //formatterDate.format(dataHoraFimId.getValue());
-			 
-			 //LocalDate inicio = dataHoraInicioId.getValue();
-			 //LocalDate fim = dataHoraFimId.getValue();
-			 
 			 resultado.setText("");
 			 avisoDataFim.setText("");
 			 
@@ -108,11 +104,11 @@ public class ControllerClaudiaAdicionarEvento {
 				 e.setDescricao(descricaoId.getText());
 				 e.setDataHoraInicio(inicioTxt);
 				 e.setDataHoraFim(fimTxt);
-				 //if(this.calendario.existe(e) != false) {
+				 //if(calendario.existe(e) != false) {
 						calendario.adicionarPorEvento(e);
 						resultado.setText("Evento criado com sucesso");
 					//} else {
-						throw new EventoJaExistenteException(e.getNome());
+						//throw new EventoJaExistenteException(e.getNome());
 					//}
 			 } else {
 				 dataHoraFimId = dataHoraInicioId;
@@ -124,6 +120,7 @@ public class ControllerClaudiaAdicionarEvento {
 		 }
 		 
 		 }
+
 	 
 	 @FXML
 	 public void limparCampos() {
@@ -131,7 +128,7 @@ public class ControllerClaudiaAdicionarEvento {
 		 nomeId.clear();
 		 descricaoId.clear();
 		 resultado.setText("");
-	    }
+	 }
 			
 	
 }
