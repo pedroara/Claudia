@@ -12,7 +12,7 @@
 <?import javafx.scene.text.Font?>
 <?import javafx.scene.text.Text?>
 
-<AnchorPane minWidth="1037.0" prefHeight="500.0" prefWidth="1037.0" stylesheets="@../css/whiteOnBlack.css" xmlns="http://javafx.com/javafx/8.0.171" xmlns:fx="http://javafx.com/fxml/1" fx:controller="controladoresTelas.ControllerClaudiaApp">
+<AnchorPane minWidth="1037.0" prefHeight="500.0" prefWidth="1037.0" stylesheets="@../css/whiteOnBlack.css" xmlns="http://javafx.com/javafx/8.0.171" xmlns:fx="http://javafx.com/fxml/1" fx:controller="controladoresTelas.ControllerClaudiaAdicionarEvento">
    <children>
       <ToolBar prefHeight="40.0" prefWidth="1037.0">
         <items>
