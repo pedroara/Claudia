@@ -45,6 +45,10 @@ public class Calendario {
 		return eventos;
 	}
 	
+	public void setEventos(ArrayList<Evento> eventos){
+		this.eventos = eventos;
+	}
+	
 	public void adicionar(String nome, String descricao, String dataHoraInicio, String dataHoraFim) {
 		if(eventos != null) {
 
@@ -53,6 +57,13 @@ public class Calendario {
 			
 		}
 	}
+	
+	public void adicionarPorEvento(Evento e) {
+		if(eventos != null && e != null) {
+			eventos.add(e);	
+		}
+	}
+	
 	public void remover(Evento e) {
 		if(eventos.contains(e) && e != null) {
 			eventos.remove(e);
@@ -102,7 +113,7 @@ public class Calendario {
 	
 	public boolean existe(Evento e) {
 		for(int i = 0; i < eventos.size(); i++) {
-			if(eventos.get(i) == e) {
+			if(eventos.get(i) == e && eventos != null && eventos.get(i) != null && e != null) {
 				return true;
 			}
 		}

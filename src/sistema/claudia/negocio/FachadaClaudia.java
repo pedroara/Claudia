@@ -143,6 +143,10 @@ public class FachadaClaudia {
 	public void adicionarEvento(String nome, String descricao, String dataHoraInicio, String dataHoraFim) throws EventoJaExistenteException {
 		calendario.adicionar(nome, descricao, dataHoraInicio, dataHoraFim);;
 	}
+
+	public Calendario getCalendario() {
+		return calendario;
+	}
 	
 	
 }
