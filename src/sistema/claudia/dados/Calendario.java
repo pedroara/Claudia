@@ -101,8 +101,8 @@ public class Calendario {
 	}
 	
 	public boolean existe(Evento e) {
-		for(Evento busca: eventos) {
-			if(busca == e) {
+		for(int i = 0; i < eventos.size(); i++) {
+			if(eventos.get(i) == e) {
 				return true;
 			}
 		}

@@ -5,9 +5,25 @@ import javafx.event.ActionEvent;
 import javafx.event.EventHandler;
 import javafx.fxml.FXML;
 import java.net.URL;
+import java.text.ParseException;
+import java.text.SimpleDateFormat;
+import java.time.LocalDate;
+import java.time.LocalDateTime;
+import java.time.format.DateTimeFormatter;
+import java.util.Date;
 import java.util.ResourceBundle;
+
+import javax.swing.text.DateFormatter;
+
 import javafx.scene.control.Button;
+import javafx.scene.control.DatePicker;
+import javafx.scene.control.Label;
 import javafx.scene.control.TextArea;
+import javafx.scene.control.TextField;
+import sistema.claudia.dados.Calendario;
+import sistema.claudia.exceptions.DataIncoerenteException;
+import sistema.claudia.exceptions.EventoJaExistenteException;
+import sistema.claudia.negocio.Evento;
 import sistema.claudia.negocio.FachadaClaudia;
 
 
@@ -20,8 +36,19 @@ public class ControllerClaudiaAdicionarEvento {
 	
 	@FXML
 	private URL url;
+	
+	@FXML
+	private TextField nomeId;
 
+	@FXML
+	private TextField descricaoId;
+	
+	@FXML
+	private DatePicker dataHoraInicioId;
 
+	@FXML
+	private DatePicker dataHoraFimId;
+	
     @FXML
     private Button ClaudiaBtn;
 
@@ -30,6 +57,17 @@ public class ControllerClaudiaAdicionarEvento {
 
     @FXML
     private Button AdiconarBtn;
+    
+    @FXML
+    private Calendario calendario;
+    
+    @FXML
+    private Label resultado;
+    
+    @FXML
+    private Label avisoDataFim;
+    
+    DateTimeFormatter formatter = DateTimeFormatter.ofPattern("dd-MM-yyyy HH:mm");
 
 	 @FXML
 	 public void  initialize() {
@@ -40,4 +78,60 @@ public class ControllerClaudiaAdicionarEvento {
 				public void handle(ActionEvent event) {Main.loadScene("/gui/homeClaudia.fxml", "Claudia");}} );
 		 
 	 }
+	 
+	 
+	 
+	 @FXML
+	 public void cadastrar() throws EventoJaExistenteException, DataIncoerenteException {
+		 if(nomeId != null && dataHoraInicioId.getValue() != null && dataHoraFimId.getValue() != null) {
+			 DateTimeFormatter formatter = DateTimeFormatter.ofPattern("dd-MM-yyyy HH:mm");
+			 //DateTimeFormatter formatterDate = DateTimeFormatter.ofPattern("dd-MM-yyyy");
+			 
+			 //formatterDate.format(dataHoraInicioId.getValue());
+			 //formatterDate.format(dataHoraFimId.getValue());
+			 
+			 //LocalDate inicio = dataHoraInicioId.getValue();
+			 //LocalDate fim = dataHoraFimId.getValue();
+			 
+			 resultado.setText("");
+			 avisoDataFim.setText("");
+			 
+			 if(dataHoraFimId.getValue().isAfter(dataHoraInicioId.getValue())) {
+				 LocalDateTime dataInicio = dataHoraInicioId.getValue().atStartOfDay();
+				 LocalDateTime dataFim = dataHoraFimId.getValue().atStartOfDay();
+				 //LocalDateTime dataInicio = inicio.atTime(time);
+				 
+				 String inicioTxt = formatter.format(dataInicio);
+				 String fimTxt = formatter.format(dataFim);
+				 
+				 Evento e = new Evento(nomeId.getText(), descricaoId.getText(), inicioTxt, fimTxt);
+				 /*if(calendario.existe(e) != false) {
+						calendario.adicionar(e.getNome(),
+								e.getDescricao(),
+								e.dataToString(e.getDataHoraInicio()),
+								e.dataToString(e.getDataHoraFim()));
+						resultado.setText("Evento criado com sucesso");
+					} else {
+						throw new EventoJaExistenteException(e.getNome());
+					}*/
+			 } else {
+				 dataHoraFimId = dataHoraInicioId;
+				 avisoDataFim.setText("Data de fim incoerente; insira um dia válido");
+				 throw new DataIncoerenteException(dataHoraFimId.getValue());
+			 }
+		 } else if(nomeId == null) {
+			 resultado.setText("Campo de nome vazio");
+		 }
+		 
+		 }
+	 
+	 @FXML
+	 public void limparCampos() {
+		 //dataHoraFimId.clear();
+		 nomeId.clear();
+		 descricaoId.clear();
+		 resultado.setText("");
+	    }
+			
+	
 }
