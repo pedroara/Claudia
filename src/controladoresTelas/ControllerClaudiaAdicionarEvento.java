@@ -14,12 +14,11 @@ import java.util.ArrayList;
 import java.util.Date;
 import java.util.ResourceBundle;
 import javax.swing.text.DateFormatter;
-
-import br.com.banco.model.domain.Cliente;
 import javafx.scene.control.Button;
 import javafx.scene.control.DatePicker;
 import javafx.scene.control.Label;
 import javafx.scene.control.ListView;
+import javafx.scene.control.SplitMenuButton;
 import javafx.scene.control.TextArea;
 import javafx.scene.control.TextField;
 import javafx.scene.input.MouseEvent;
@@ -67,6 +66,20 @@ public class ControllerClaudiaAdicionarEvento {
     
     @FXML
     private Label avisoDataFim;
+    
+    @FXML
+    private SplitMenuButton horaInicioId;
+    
+    @FXML
+    private SplitMenuButton minutoInicioId;
+    
+    @FXML
+    private SplitMenuButton horaFimId;
+    
+    @FXML
+    private SplitMenuButton minutoFimId;
+    
+    
     
     DateTimeFormatter formatter = DateTimeFormatter.ofPattern("dd-MM-yyyy HH:mm");
     
