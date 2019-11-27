@@ -114,7 +114,7 @@ public class Evento {
 
 	@Override
 	public String toString() {
-		return this.nome;
+		return nome + "\n" + "Descrição: " + descricao + "\n" + "Começa em: " + dataHoraInicio.format(formatter) + "\n" + "Termina em: " + dataHoraFim.format(formatter) + "\n" + "------------------------------------";
 	}
 	
 	public String dataToString(LocalDateTime data) {
