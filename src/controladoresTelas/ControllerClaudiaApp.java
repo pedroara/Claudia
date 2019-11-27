@@ -45,6 +45,9 @@ public class ControllerClaudiaApp {
     
     @FXML
     private Button RemoverBtn;
+    
+    @FXML
+    private Button EditarBtn;
 	
 	@FXML
 	private ListView<Evento> listViewDomingo; 
