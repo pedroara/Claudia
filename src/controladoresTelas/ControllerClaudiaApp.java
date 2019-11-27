@@ -4,6 +4,8 @@ import java.net.URL;
 import java.time.LocalDateTime;
 import java.util.Calendar;
 import java.util.ResourceBundle;
+
+import br.com.banco.model.domain.Cliente;
 import gui.Main;
 import javafx.collections.FXCollections;
 import javafx.collections.ObservableList;
@@ -13,8 +15,10 @@ import javafx.fxml.FXML;
 import javafx.scene.control.Button;
 import javafx.scene.control.Label;
 import javafx.scene.control.ListView;
+import sistema.claudia.dados.Calendario;
+import sistema.claudia.negocio.Evento;
 import sistema.claudia.negocio.FachadaClaudia;
-
+import controladoresTelas.ControllerClaudiaAdicionarEvento;
 
 
 
@@ -22,6 +26,7 @@ public class ControllerClaudiaApp {
 	
 	
 	private final FachadaClaudia fachadaClaudia = FachadaClaudia.getInstance();
+	//Calendario calendario = fachadaClaudia.getCalendario();
 	
 	@FXML
 	private ResourceBundle rb;
@@ -37,6 +42,9 @@ public class ControllerClaudiaApp {
 
     @FXML
     private Button AdiconarBtn;
+    
+    @FXML
+    private Button RemoverBtn;
 	
 	@FXML
 	private ListView<String> listViewDomingo; 
@@ -83,6 +91,9 @@ public class ControllerClaudiaApp {
     @FXML
     private Label sabadoDia;
     
+//    @FXML
+//    private Label avisoRemover;
+    
     
 	public void initialize() {
 			
@@ -125,6 +136,19 @@ public class ControllerClaudiaApp {
 		}
 	}
 	
+//	@FXML
+//	public void remover() {
+//		Evento e;
+//		e.setNome(listViewDomingo.getSelectionModel().getSelectedItem());
+//		
+//        if (e != null) {
+//            fachadaClaudia.remover(e);
+//            //limpar campor do removido
+//            //atualizar listView
+//        } else {
+//            avisoRemover.setText("Selecione um evento para remover!");
+//        }
+//    }	
 	
 }
 
