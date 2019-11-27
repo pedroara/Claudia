@@ -30,7 +30,6 @@ import sistema.claudia.negocio.Evento;
 import sistema.claudia.negocio.FachadaClaudia;
 import controladoresTelas.ControllerClaudiaApp;
 
-
 public class ControllerClaudiaAdicionarEvento {
 	
 	private final FachadaClaudia fachadaClaudia = FachadaClaudia.getInstance();

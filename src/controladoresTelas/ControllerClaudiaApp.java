@@ -47,25 +47,25 @@ public class ControllerClaudiaApp {
     private Button RemoverBtn;
 	
 	@FXML
-	private ListView<String> listViewDomingo; 
+	private ListView<Evento> listViewDomingo; 
     
 	@FXML
-	private ListView<String> listViewQuarta;
+	private ListView<Evento> listViewQuarta;
 
 	@FXML
-	private ListView<String> listViewQuinta;
+	private ListView<Evento> listViewQuinta;
 
 	@FXML
-	private ListView<String> listViewSabado;
+	private ListView<Evento> listViewSabado;
 
 	@FXML
-	private ListView<String> listViewSegunda;
+	private ListView<Evento> listViewSegunda;
 
 	@FXML
-	private ListView<String> listViewSexta;
+	private ListView<Evento> listViewSexta;
 
 	@FXML
-	private ListView<String> listViewTerca;
+	private ListView<Evento> listViewTerca;
 
     @FXML
     private Label textoNaTela;
@@ -117,13 +117,13 @@ public class ControllerClaudiaApp {
 		sabadoDia.setText("" + c.get(Calendar.DAY_OF_MONTH));
 		
 		
-		ObservableList<String> dataDom = FXCollections.observableArrayList(fachadaClaudia.getListDomingo());
-		ObservableList<String> dataSeg = FXCollections.observableArrayList(fachadaClaudia.getListSegunda());
-		ObservableList<String> dataTer = FXCollections.observableArrayList(fachadaClaudia.getListTerca());
-		ObservableList<String> dataQua = FXCollections.observableArrayList(fachadaClaudia.getListQuarta());
-		ObservableList<String> dataQui = FXCollections.observableArrayList(fachadaClaudia.getListQuinta());
-		ObservableList<String> dataSex = FXCollections.observableArrayList(fachadaClaudia.getListSexta());
-		ObservableList<String> dataSab = FXCollections.observableArrayList(fachadaClaudia.getListSabado());
+		ObservableList<Evento> dataDom = FXCollections.observableArrayList(fachadaClaudia.getListDomingo());
+		ObservableList<Evento> dataSeg = FXCollections.observableArrayList(fachadaClaudia.getListSegunda());
+		ObservableList<Evento> dataTer = FXCollections.observableArrayList(fachadaClaudia.getListTerca());
+		ObservableList<Evento> dataQua = FXCollections.observableArrayList(fachadaClaudia.getListQuarta());
+		ObservableList<Evento> dataQui = FXCollections.observableArrayList(fachadaClaudia.getListQuinta());
+		ObservableList<Evento> dataSex = FXCollections.observableArrayList(fachadaClaudia.getListSexta());
+		ObservableList<Evento> dataSab = FXCollections.observableArrayList(fachadaClaudia.getListSabado());
 		
 		if(listViewDomingo != null && listViewSegunda != null && listViewTerca != null && listViewQuarta != null && listViewQuinta != null && listViewSexta != null && listViewSabado != null) {
 		listViewDomingo.setItems(dataDom);
