@@ -11,11 +11,7 @@ import java.util.ResourceBundle;
 import javafx.scene.control.Button;
 import javafx.scene.control.DatePicker;
 import javafx.scene.control.Label;
-<<<<<<< HEAD
-=======
-import javafx.scene.control.ListView;
 import javafx.scene.control.MenuItem;
->>>>>>> 92380b34042bfb83fb5bb6a9d7c797e8a3d7d530
 import javafx.scene.control.SplitMenuButton;
 import javafx.scene.control.TextField;
 import sistema.claudia.dados.Calendario;
