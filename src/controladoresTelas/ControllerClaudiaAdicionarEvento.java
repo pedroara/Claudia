@@ -14,12 +14,12 @@ import java.util.ArrayList;
 import java.util.Date;
 import java.util.ResourceBundle;
 import javax.swing.text.DateFormatter;
-
-import br.com.banco.model.domain.Cliente;
 import javafx.scene.control.Button;
 import javafx.scene.control.DatePicker;
 import javafx.scene.control.Label;
 import javafx.scene.control.ListView;
+import javafx.scene.control.MenuItem;
+import javafx.scene.control.SplitMenuButton;
 import javafx.scene.control.TextArea;
 import javafx.scene.control.TextField;
 import javafx.scene.input.MouseEvent;
@@ -67,6 +67,30 @@ public class ControllerClaudiaAdicionarEvento {
     @FXML
     private Label avisoDataFim;
     
+    @FXML
+    private SplitMenuButton horaInicioId;
+    
+    @FXML
+    private SplitMenuButton minutoInicioId;
+    
+    @FXML
+    private SplitMenuButton horaFimId;
+    
+    @FXML
+    private SplitMenuButton minutoFimId;
+    
+    @FXML
+    private int horaInicio;
+    
+    @FXML
+    private int minutoInicio;
+    
+    @FXML
+    private int horaFim;
+    
+    @FXML
+    private int minutoFim;
+    
     DateTimeFormatter formatter = DateTimeFormatter.ofPattern("dd-MM-yyyy HH:mm");
     
     Calendario calendario = fachadaClaudia.getCalendario();
@@ -86,14 +110,16 @@ public class ControllerClaudiaAdicionarEvento {
 	 
 	 @FXML
 	 public void cadastrar() throws EventoJaExistenteException, DataIncoerenteException {
+		 addHoraMinuto();
+		 
 		 if(nomeId != null && dataHoraInicioId.getValue() != null && dataHoraFimId.getValue() != null) {
 			 DateTimeFormatter formatter = DateTimeFormatter.ofPattern("dd-MM-yyyy HH:mm");
 			 resultado.setText("");
 			 avisoDataFim.setText("");
 			 
 			 if(dataHoraFimId.getValue().isAfter(dataHoraInicioId.getValue()) || dataHoraFimId.getValue() == dataHoraInicioId.getValue()) {
-				 LocalDateTime dataInicio = dataHoraInicioId.getValue().atStartOfDay();
-				 LocalDateTime dataFim = dataHoraFimId.getValue().atStartOfDay();
+				 LocalDateTime dataInicio = dataHoraInicioId.getValue().atTime(horaInicio, minutoInicio);
+				 LocalDateTime dataFim = dataHoraFimId.getValue().atTime(horaFim, minutoFim);
 				 //LocalDateTime dataInicio = inicio.atTime(time);
 				 
 				 String inicioTxt = formatter.format(dataInicio);
@@ -127,6 +153,103 @@ public class ControllerClaudiaAdicionarEvento {
 		 nomeId.clear();
 		 descricaoId.clear();
 		 resultado.setText("");
+	 }
+	 
+	 @FXML
+	 public void addHoraMinuto()
+	 {
+		 for(int i = 0; i <= 23; i++) {
+			 if(i < 10) {
+				 MenuItem j = new MenuItem("0" + i);
+				 int id = i;
+				 j.setOnAction(new EventHandler<ActionEvent>() {
+				     @Override public void handle(ActionEvent e) {
+				         horaInicio = id;
+				     }
+				 });
+				 if(j != null) horaInicioId.getItems().add(j);
+				 
+			 } else {
+				 MenuItem j = new MenuItem("" + i);
+				 int id = i;
+				 j.setOnAction(new EventHandler<ActionEvent>() {
+				     @Override public void handle(ActionEvent e) {
+				         horaInicio = id;
+				     }
+				 });
+				 if(j != null) horaInicioId.getItems().add(j);
+			 }
+			 
+		 }
+		 
+		 for(int i = 0; i <= 23; i++) {
+			 if(i < 10) {
+				 MenuItem j = new MenuItem("0" + i);
+				 int id = i;
+				 j.setOnAction(new EventHandler<ActionEvent>() {
+				     @Override public void handle(ActionEvent e) {
+				         horaFim = id;
+				     }
+				 });
+				 if(j != null) horaFimId.getItems().add(j);
+			 } else {
+				 MenuItem j = new MenuItem("" + i);
+				 int id = i;
+				 j.setOnAction(new EventHandler<ActionEvent>() {
+				     @Override public void handle(ActionEvent e) {
+				         horaFim = id;
+				     }
+				 });
+				 if(j != null) horaFimId.getItems().add(j);
+			 }
+			 
+		 }
+		 
+		 for(int i = 0; i <= 59; i++) {
+			 if(i < 10) {
+				 MenuItem j = new MenuItem("0" + i);
+				 int id = i;
+				 j.setOnAction(new EventHandler<ActionEvent>() {
+				     @Override public void handle(ActionEvent e) {
+				         minutoInicio = id;
+				     }
+				 });
+				 if(j != null) minutoInicioId.getItems().add(j);
+			 } else {
+				 MenuItem j = new MenuItem("" + i);
+				 int id = i;
+				 j.setOnAction(new EventHandler<ActionEvent>() {
+				     @Override public void handle(ActionEvent e) {
+				         minutoInicio = id;
+				     }
+				 });
+				 if(j != null) minutoInicioId.getItems().add(j);
+			 }
+			 
+		 }
+		 
+		 for(int i = 0; i <= 59; i++) {
+			 if(i < 10) {
+				 MenuItem j = new MenuItem("0" + i);
+				 int id = i;
+				 j.setOnAction(new EventHandler<ActionEvent>() {
+				     @Override public void handle(ActionEvent e) {
+				         minutoFim = id;
+				     }
+				 });
+				 if(j != null) minutoFimId.getItems().add(j);
+			 } else {
+				 MenuItem j = new MenuItem("" + i);
+				 int id = i;
+				 j.setOnAction(new EventHandler<ActionEvent>() {
+				     @Override public void handle(ActionEvent e) {
+				         minutoFim = id;
+				     }
+				 });
+				 if(j != null) minutoFimId.getItems().add(j);
+			 }
+			 
+		 }
 	 }
 			
 	

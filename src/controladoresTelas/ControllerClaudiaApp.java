@@ -4,8 +4,6 @@ import java.net.URL;
 import java.time.LocalDateTime;
 import java.util.Calendar;
 import java.util.ResourceBundle;
-
-import br.com.banco.model.domain.Cliente;
 import gui.Main;
 import javafx.collections.FXCollections;
 import javafx.collections.ObservableList;
