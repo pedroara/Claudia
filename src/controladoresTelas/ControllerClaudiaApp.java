@@ -101,6 +101,7 @@ public class ControllerClaudiaApp {
 	public void initialize() {
 			
 		AdiconarBtn.setOnAction(new EventHandler<ActionEvent>() { @Override public void handle(ActionEvent event) {Main.loadScene("/gui/addEvento.fxml", "Adicionar Evento");} } );
+		EditarBtn.setOnAction(new EventHandler<ActionEvent>() { @Override public void handle(ActionEvent event) {Main.loadScene("/gui/editEvento.fxml", "Editar Evento");} } );
 		
 		Calendar c = Calendar.getInstance();
 		

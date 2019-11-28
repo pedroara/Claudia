@@ -87,13 +87,7 @@ public class ControllerClaudiaAdicionarEvento {
 	 @FXML
 	 public void  initialize() {
 		 
-		 //Calendario calendario = new Calendario();
-		 ClaudiaBtn.setOnAction(new EventHandler<ActionEvent>() {
-
-				@Override
-				public void handle(ActionEvent event) {Main.loadScene("/gui/homeClaudia.fxml", "Claudia");}} );
-		 
-	 }
+	 ClaudiaBtn.setOnAction(new EventHandler<ActionEvent>() { @Override public void handle(ActionEvent event) {Main.loadScene("/gui/homeClaudia.fxml", "Claudia");}} ); }
 	 
 	 
 	 
