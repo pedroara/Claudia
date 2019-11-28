@@ -16,7 +16,7 @@
       <ToolBar prefHeight="40.0" prefWidth="1361.0">
          <items>
             <Button fx:id="ClaudiaBtn" mnemonicParsing="false" text="Claudia" />
-            <Button fx:id="PesquisarBtn" layoutX="10.0" layoutY="13.0" mnemonicParsing="false" text="Pesquisar por Data">
+            <Button fx:id="PesquisarBtn" layoutX="10.0" layoutY="13.0" mnemonicParsing="false" text="Pesquisar por Nome">
                <contextMenu>
                   <ContextMenu>
                      <items>
