@@ -84,17 +84,6 @@ public class Calendario implements Serializable{
 		}
 	}
 	
-	public Evento buscarPorNome(String nome) {
-		if(eventos != null) {
-			for(Evento ev: eventos) {
-				if(ev.getNome().equals(nome)) {
-					return ev;
-				}
-			}
-		}
-		return null;
-	}
-	
 	public void editar(Evento e) {
 		//TODO
 	}

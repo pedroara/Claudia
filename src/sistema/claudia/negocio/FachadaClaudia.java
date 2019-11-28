@@ -136,8 +136,8 @@ public class FachadaClaudia {
 		return eventosDoDia;
 	}
 	
-	public Evento buscarPorNome(String name) {
-		return calendario.buscarPorNome(name);
+	public ArrayList<Evento> buscarPorNome(String name) {
+		return calendario.BuscarEventoPeloNome(name);
 	}
 	
 	public void editarEvento(Evento ev, String nome, String descricao, String dataHoraInicio, String dataHoraFim) {

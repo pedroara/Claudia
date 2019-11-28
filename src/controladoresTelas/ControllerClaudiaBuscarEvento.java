@@ -39,9 +39,7 @@ public class ControllerClaudiaBuscarEvento {
     @FXML
     public void clicado()
     {
-    	ArrayList<Evento> lista = new ArrayList<Evento>();
-    	Evento even = fachadaClaudia.buscarPorNome(textBuscar.getText()) ;
-    	lista.add(even);
+    	ArrayList<Evento> lista = fachadaClaudia.buscarPorNome(textBuscar.getText()) ;
     	ObservableList<Evento> list = FXCollections.observableArrayList(lista);
     	listaDoBuscar.setItems(list);
     	listaDoBuscar.refresh();
