@@ -228,5 +228,6 @@
       <Label layoutX="43.0" layoutY="143.0" text="Escolha o dia:" />
       <Label layoutX="22.0" layoutY="192.0" text="Escolha o evento:" />
       <ListView fx:id="EscolhaEvento" layoutX="131.0" layoutY="192.0" prefHeight="200.0" prefWidth="190.0" />
+      <Button fx:id="buscarId" layoutX="335.0" layoutY="139.0" mnemonicParsing="false" text="Buscar" />
    </children>
 </AnchorPane>

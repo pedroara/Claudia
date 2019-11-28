@@ -88,15 +88,7 @@ public class ControllerClaudiaAdicionarEvento {
 	 @FXML
 	 public void  initialize() {
 		 
-		 //Calendario calendario = new Calendario();
-		 ClaudiaBtn.setOnAction(new EventHandler<ActionEvent>() {
-
-				@Override
-				public void handle(ActionEvent event) {Main.loadScene("/gui/homeClaudia.fxml", "Claudia");}} );
-		 
-	 }
-	 
-	 
+	ClaudiaBtn.setOnAction(new EventHandler<ActionEvent>() {@Override public void handle(ActionEvent event) {Main.loadScene("/gui/homeClaudia.fxml", "Claudia");}} );}
 	 
 	 @FXML
 	 public void cadastrar() throws EventoJaExistenteException, DataIncoerenteException {
@@ -156,7 +148,8 @@ public class ControllerClaudiaAdicionarEvento {
 				         horaInicio = id;
 				     }
 				 });
-				 if(j != null) horaInicioId.getItems().add(j);
+				 if(j != null)
+					 horaInicioId.getItems().add(j);
 				 
 			 } else {
 				 MenuItem j = new MenuItem("" + i);

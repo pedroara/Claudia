@@ -1,5 +1,6 @@
 package controladoresTelas;
 
+import java.time.LocalDate;
 import java.time.LocalDateTime;
 import gui.Main;
 import javafx.collections.FXCollections;
@@ -51,6 +52,9 @@ public class ControllerClaudiaEditarEvento {
 
     @FXML
     private ListView<Evento> EscolhaEvento;
+    
+    @FXML
+    private Button buscarId;
 
     
     public void initialize() {
@@ -59,10 +63,14 @@ public class ControllerClaudiaEditarEvento {
     	EditarBtn.setOnAction(new EventHandler<ActionEvent>() { @Override public void handle(ActionEvent event) {Main.loadScene("/gui/editEvento.fxml", "Editar Evento");} } );
     	ClaudiaBtn.setOnAction(new EventHandler<ActionEvent>() { @Override public void handle(ActionEvent event) {Main.loadScene("/gui/homeClaudia.fxml", "Claudia");}} ); 
     	
-    	
-    	LocalDateTime dataa = EscolhaDia.getValue().atStartOfDay();
-    	ObservableList<Evento> listaa = FXCollections.observableArrayList(fachadaClaudia.editRecebendoDia(dataa));
-    	EscolhaEvento.setItems(listaa);
+    	//Aqui Mari
+    	if(EscolhaDia.getValue() != null) {
+    		LocalDate dataa = EscolhaDia.getValue();
+    		ObservableList<Evento> listaa = FXCollections.observableArrayList(fachadaClaudia.editRecebendoDia(dataa));
+    		EscolhaEvento.setItems(listaa);
+    		buscarId.setOnAction(new EventHandler<ActionEvent>() {@Override public void handle(ActionEvent event) {EscolhaEvento.refresh();};});
+    		EscolhaEvento.refresh();
+    	}
 
     	
     	

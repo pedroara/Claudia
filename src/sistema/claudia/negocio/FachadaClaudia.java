@@ -2,6 +2,7 @@ package sistema.claudia.negocio;
 
 
 import java.time.DayOfWeek;
+import java.time.LocalDate;
 import java.time.LocalDateTime;
 import java.util.ArrayList;
 import sistema.claudia.dados.Calendario;
@@ -44,10 +45,10 @@ public class FachadaClaudia {
 		
 	}
 	
-	public ArrayList<Evento> editRecebendoDia (LocalDateTime diaPraProcurar){
+	public ArrayList<Evento> editRecebendoDia (LocalDate diaPraProcurar){
 		ArrayList<Evento> eventoos = new ArrayList<Evento>();
 		for(int i = 0; i < calendario.getEventos().size(); i++) {
-			if(calendario.getEventos().get(i).getDataHoraInicio().equals(diaPraProcurar)) {
+			if(calendario.getEventos().get(i).getDataHoraInicio().equals(diaPraProcurar.atStartOfDay())) {
 				eventoos.add(calendario.getEventos().get(i));
 			}
 		}
