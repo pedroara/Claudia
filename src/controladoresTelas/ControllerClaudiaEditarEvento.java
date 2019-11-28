@@ -59,11 +59,14 @@ public class ControllerClaudiaEditarEvento {
     	EditarBtn.setOnAction(new EventHandler<ActionEvent>() { @Override public void handle(ActionEvent event) {Main.loadScene("/gui/editEvento.fxml", "Editar Evento");} } );
     	ClaudiaBtn.setOnAction(new EventHandler<ActionEvent>() { @Override public void handle(ActionEvent event) {Main.loadScene("/gui/homeClaudia.fxml", "Claudia");}} ); 
     	
-//    	Aqui Mari
-//    	LocalDateTime dataa = EscolhaDia.getValue().atStartOfDay();
-//    	ObservableList<Evento> listaa = FXCollections.observableArrayList(fachadaClaudia.editRecebendoDia(dataa));
-//		EscolhaEvento.setItems(listaa);
-//    	
+    	//Aqui Mari
+    	if(EscolhaDia.getValue() != null) {
+    		LocalDateTime dataa = EscolhaDia.getValue().atStartOfDay();
+    		ObservableList<Evento> listaa = FXCollections.observableArrayList(fachadaClaudia.editRecebendoDia(dataa));
+    		EscolhaEvento.setItems(listaa);
+    	}	
+    	
+    	
     		
         	
     	

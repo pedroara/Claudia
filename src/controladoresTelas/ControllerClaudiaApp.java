@@ -3,14 +3,7 @@ package controladoresTelas;
 import java.net.URL; 
 import java.util.Calendar;
 import java.util.ResourceBundle;
-<<<<<<< HEAD
-=======
-<<<<<<< HEAD
-=======
-
 //import br.com.banco.model.domain.Cliente;
->>>>>>> d9870f25a5518f1f3900876df6769e78c6932cc4
->>>>>>> 92380b34042bfb83fb5bb6a9d7c797e8a3d7d530
 import gui.Main;
 import javafx.collections.FXCollections;
 import javafx.collections.ObservableList;
