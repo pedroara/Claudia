@@ -45,16 +45,6 @@ public class FachadaClaudia {
 		
 	}
 	
-	public ArrayList<Evento> editRecebendoDia (LocalDate diaPraProcurar){
-		ArrayList<Evento> eventoos = new ArrayList<Evento>();
-		for(int i = 0; i < calendario.getEventos().size(); i++) {
-			if(calendario.getEventos().get(i).getDataHoraInicio().equals(diaPraProcurar.atStartOfDay())) {
-				eventoos.add(calendario.getEventos().get(i));
-			}
-		}
-		return eventoos;
-	}
-	
 	public ArrayList<Evento> getListDomingo(){
 		ArrayList<Evento> eventossDoDia = new ArrayList<>();
 		for (int i = 0 ; i < calendario.getEventos().size(); i++) {
@@ -140,6 +130,17 @@ public class FachadaClaudia {
 			}
 		}
 		return eventosDoDia;
+	}
+	
+	public void editarEvento(Evento ev, String nome, String descricao, String dataHoraInicio, String dataHoraFim) {
+		for(int i = 0; i < calendario.getEventos().size(); i++) {
+			if(ev ==calendario.getEventos().get(i)) {
+				ev.setNome(nome);
+				ev.setDescricao(descricao);
+				ev.setDataHoraInicio(dataHoraInicio);
+				ev.setDataHoraFim(dataHoraFim);				
+			}
+		}		
 	}
 	
 	public void adicionarEvento(String nome, String descricao, String dataHoraInicio, String dataHoraFim) throws EventoJaExistenteException {

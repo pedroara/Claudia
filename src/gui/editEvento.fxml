@@ -29,8 +29,6 @@
       <Label layoutX="465.0" layoutY="372.0" text="Data de fim:" />
       <DatePicker fx:id="dataHoraInicioId" layoutX="552.0" layoutY="312.0" />
       <DatePicker fx:id="dataHoraFimId" layoutX="549.0" layoutY="368.0" />
-      <Label layoutX="759.0" layoutY="316.0" text="Hora de início:" />
-      <Label layoutX="771.0" layoutY="372.0" text="Hora do fim:" />
       <AnchorPane layoutX="1040.0" layoutY="361.0" prefHeight="40.0" prefWidth="454.0">
          <children>
             <Label fx:id="avisoDataFim" contentDisplay="CENTER" prefHeight="30.0" prefWidth="418.0" textFill="#ee0c0c">
@@ -40,6 +38,11 @@
             </Label>
          </children>
       </AnchorPane>
+      <Label layoutX="82.0" layoutY="69.0" text="Escolha o evento:" />
+      <ListView fx:id="EscolhaEvento" layoutX="82.0" layoutY="109.0" prefHeight="360.0" prefWidth="200.0" />
+      <Label fx:id="evSelecionado" layoutX="254.0" layoutY="69.0" prefHeight="17.0" prefWidth="184.0" />
+      <Label layoutX="759.0" layoutY="316.0" text="Hora de início:" />
+      <Label layoutX="771.0" layoutY="372.0" text="Hora do fim:" />
       <SplitMenuButton layoutX="855.0" layoutY="312.0" mnemonicParsing="false" text="HH">
          <items>
             <MenuItem mnemonicParsing="false" text="00" />
@@ -224,10 +227,5 @@
             <MenuItem mnemonicParsing="false" text="59" />
          </items>
       </SplitMenuButton>
-      <DatePicker fx:id="EscolhaDia" layoutX="131.0" layoutY="139.0" />
-      <Label layoutX="43.0" layoutY="143.0" text="Escolha o dia:" />
-      <Label layoutX="22.0" layoutY="192.0" text="Escolha o evento:" />
-      <ListView fx:id="EscolhaEvento" layoutX="131.0" layoutY="192.0" prefHeight="200.0" prefWidth="190.0" />
-      <Button fx:id="buscarId" layoutX="335.0" layoutY="139.0" mnemonicParsing="false" text="Buscar" />
    </children>
 </AnchorPane>
