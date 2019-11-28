@@ -11,8 +11,6 @@ import java.util.ResourceBundle;
 import javafx.scene.control.Button;
 import javafx.scene.control.DatePicker;
 import javafx.scene.control.Label;
-import javafx.scene.control.MenuItem;
-import javafx.scene.control.SplitMenuButton;
 import javafx.scene.control.TextField;
 import sistema.claudia.dados.Calendario;
 import sistema.claudia.exceptions.DataIncoerenteException;

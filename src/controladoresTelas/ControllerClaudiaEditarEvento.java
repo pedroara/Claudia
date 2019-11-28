@@ -125,8 +125,8 @@ public class ControllerClaudiaEditarEvento {
     	//Aqui Mari
     	
     		
-    		ObservableList<Evento> listaa = FXCollections.observableArrayList(fachadaClaudia.getCalendario().getEventos());
-    		EscolhaEvento.setItems(listaa);
+    	ObservableList<Evento> listaa = FXCollections.observableArrayList(fachadaClaudia.getCalendario().getEventos());
+    	EscolhaEvento.setItems(listaa);
     	
     	
     }       		

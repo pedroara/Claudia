@@ -43,6 +43,8 @@ public class FachadaClaudia {
 	
 	public void remover(Evento e) {
 		
+		calendario.remover(e);
+		
 	}
 	
 	public ArrayList<Evento> getListDomingo(){
