@@ -5,29 +5,19 @@ import javafx.event.ActionEvent;
 import javafx.event.EventHandler;
 import javafx.fxml.FXML;
 import java.net.URL;
-import java.text.ParseException;
-import java.text.SimpleDateFormat;
-import java.time.LocalDate;
 import java.time.LocalDateTime;
 import java.time.format.DateTimeFormatter;
-import java.util.ArrayList;
-import java.util.Date;
 import java.util.ResourceBundle;
-import javax.swing.text.DateFormatter;
 import javafx.scene.control.Button;
 import javafx.scene.control.DatePicker;
 import javafx.scene.control.Label;
-import javafx.scene.control.ListView;
 import javafx.scene.control.SplitMenuButton;
-import javafx.scene.control.TextArea;
 import javafx.scene.control.TextField;
-import javafx.scene.input.MouseEvent;
 import sistema.claudia.dados.Calendario;
 import sistema.claudia.exceptions.DataIncoerenteException;
 import sistema.claudia.exceptions.EventoJaExistenteException;
 import sistema.claudia.negocio.Evento;
 import sistema.claudia.negocio.FachadaClaudia;
-import controladoresTelas.ControllerClaudiaApp;
 
 public class ControllerClaudiaAdicionarEvento {
 	

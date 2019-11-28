@@ -1,11 +1,8 @@
 package controladoresTelas;
 
 import java.net.URL; 
-import java.time.LocalDateTime;
 import java.util.Calendar;
 import java.util.ResourceBundle;
-
-//import br.com.banco.model.domain.Cliente;
 import gui.Main;
 import javafx.collections.FXCollections;
 import javafx.collections.ObservableList;
@@ -15,10 +12,8 @@ import javafx.fxml.FXML;
 import javafx.scene.control.Button;
 import javafx.scene.control.Label;
 import javafx.scene.control.ListView;
-import sistema.claudia.dados.Calendario;
 import sistema.claudia.negocio.Evento;
 import sistema.claudia.negocio.FachadaClaudia;
-import controladoresTelas.ControllerClaudiaAdicionarEvento;
 
 
 
@@ -26,7 +21,6 @@ public class ControllerClaudiaApp {
 	
 	
 	private final FachadaClaudia fachadaClaudia = FachadaClaudia.getInstance();
-	//Calendario calendario = fachadaClaudia.getCalendario();
 	
 	@FXML
 	private ResourceBundle rb;

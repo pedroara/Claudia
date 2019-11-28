@@ -22,7 +22,6 @@ public class FachadaClaudia {
 	
 	private FachadaClaudia() {
 		//FachadaClaudia.getInstance();
-		Calendario calendario = new Calendario();
 		this.calendario = new Calendario(); 
 	}
 
@@ -43,6 +42,16 @@ public class FachadaClaudia {
 	
 	public void remover(Evento e) {
 		
+	}
+	
+	public ArrayList<Evento> editRecebendoDia (LocalDateTime diaPraProcurar){
+		ArrayList<Evento> eventoos = new ArrayList<Evento>();
+		for(int i = 0; i < calendario.getEventos().size(); i++) {
+			if(calendario.getEventos().get(i).getDataHoraInicio().equals(diaPraProcurar)) {
+				eventoos.add(calendario.getEventos().get(i));
+			}
+		}
+		return eventoos;
 	}
 	
 	public ArrayList<Evento> getListDomingo(){
