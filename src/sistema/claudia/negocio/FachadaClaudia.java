@@ -38,13 +38,14 @@ public class FachadaClaudia {
 	}
 	
 	public Evento CadastrarEvento(String nome, String descricao, String dataInicio, String dataFim) {
+		this.calendario.salvarArquivo();
 		return new Evento(nome, descricao, dataInicio, dataFim);
 	}
 	
 	public void remover(Evento e) {
 		
 		calendario.remover(e);
-		calendario.salvarArquivo();
+		this.calendario.salvarArquivo();
 		
 	}
 	
@@ -141,17 +142,19 @@ public class FachadaClaudia {
 	
 	public void editarEvento(Evento ev, String nome, String descricao, String dataHoraInicio, String dataHoraFim) {
 		for(int i = 0; i < calendario.getEventos().size(); i++) {
-			if(calendario.getEventos().get(i).getNome() == ev.getNome() && calendario.getEventos().get(i).getDataHoraInicio() == ev.getDataHoraInicio()) {
+			if(calendario.getEventos().get(i).getNome().contentEquals(ev.getNome()) && calendario.getEventos().get(i).getDataHoraInicio().equals(ev.getDataHoraInicio())) {
 				calendario.getEventos().get(i).setNome(nome);
 				calendario.getEventos().get(i).setDescricao(descricao);
 				calendario.getEventos().get(i).setDataHoraInicio(dataHoraInicio);
-				calendario.getEventos().get(i).setDataHoraFim(dataHoraFim);				
+				calendario.getEventos().get(i).setDataHoraFim(dataHoraFim);	
+				this.calendario.salvarArquivo();
 			}
 		}		
 	}
 	
 	public void adicionarEvento(String nome, String descricao, String dataHoraInicio, String dataHoraFim) throws EventoJaExistenteException {
-		calendario.adicionar(nome, descricao, dataHoraInicio, dataHoraFim);;
+		calendario.adicionar(nome, descricao, dataHoraInicio, dataHoraFim);
+		this.calendario.salvarArquivo();;
 	}
 
 	public Calendario getCalendario() {

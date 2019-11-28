@@ -6,12 +6,13 @@ import java.io.FileOutputStream;
 import java.io.IOException;
 import java.io.ObjectInputStream;
 import java.io.ObjectOutputStream;
+import java.io.Serializable;
 import java.time.LocalDateTime;
 import java.util.ArrayList;
 import java.util.List;
 import sistema.claudia.negocio.Evento;
 
-public class Calendario {
+public class Calendario implements Serializable{
 	private ArrayList<Evento> eventos;
 	
 	private static Calendario instance;

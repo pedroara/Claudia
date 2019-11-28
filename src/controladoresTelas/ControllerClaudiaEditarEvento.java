@@ -79,11 +79,18 @@ public class ControllerClaudiaEditarEvento {
     
     @FXML
     public int getHora(TextField hora) throws DataIncoerenteException {
+<<<<<<< HEAD
     	if(horaInicio.getText() == null || horaFim.getText() == null || horaInicio.getText() == "" || horaFim.getText() == "" ) {
     		horaInicio.setText("00");
     		horaFim.setText("00");
     	}
     	 if(0 <= Integer.parseInt(hora.getText()) && Integer.parseInt(hora.getText()) <= 23) {
+=======
+    	if(hora.getText().isEmpty()) { 
+    		return 0;
+    	}
+    	if(0 <= Integer.parseInt(hora.getText()) && Integer.parseInt(hora.getText()) <= 23) {
+>>>>>>> 75535bcb97397d0166ba25d6dcdf07e270a56984
     		 return Integer.parseInt(hora.getText());
     	 } else {
     		 avisoDataFim.setText("Insira um horário válido.");
@@ -94,11 +101,18 @@ public class ControllerClaudiaEditarEvento {
 
     @FXML
     public int getMinuto(TextField minuto) throws DataIncoerenteException {
+<<<<<<< HEAD
     	if(minutoInicio.getText() == null || minutoFim.getText() == null || minutoInicio.getText() == "" || minutoFim.getText() == "" ) {
     		minutoInicio.setText("00");
     		minutoFim.setText("00");
     	}
     	 if(0 <= Integer.parseInt(minuto.getText()) && Integer.parseInt(minuto.getText()) <= 59) {
+=======
+    	if(minuto.getText().isEmpty()) { 
+    		return 0;
+    	}
+    	if(0 <= Integer.parseInt(minuto.getText()) && Integer.parseInt(minuto.getText()) <= 59) {
+>>>>>>> 75535bcb97397d0166ba25d6dcdf07e270a56984
     		 return Integer.parseInt(minuto.getText());
     	 } else {
     		 avisoDataFim.setText("Insira um horário válido.");
@@ -115,8 +129,12 @@ public class ControllerClaudiaEditarEvento {
         //Preenchendo os campos com o texto antigo
         nomeId.setText(selecionado.getNome());
         descricaoId.setText(selecionado.getDescricao());
-        dataHoraInicioId.setValue(selecionado.getDataHoraInicio().toLocalDate());
+        /*dataHoraInicioId.setValue(selecionado.getDataHoraInicio().toLocalDate());
         dataHoraFimId.setValue(selecionado.getDataHoraFim().toLocalDate());
+        horaInicio.setText(Integer.toString(selecionado.getDataHoraInicio().getHour()));
+        horaFim.setText(Integer.toString(selecionado.getDataHoraFim().getHour()));
+        minutoInicio.setText(Integer.toString(selecionado.getDataHoraInicio().getMinute()));
+        minutoFim.setText(Integer.toString(selecionado.getDataHoraFim().getMinute()));*/
         
         //Lógica para alteras as datas
         
@@ -125,23 +143,25 @@ public class ControllerClaudiaEditarEvento {
         	evSelecionado.setText("Evento selecionado, edite-o!");
         }      
         
+        
     if(nomeId != null && dataHoraInicioId.getValue() != null && dataHoraFimId.getValue() != null) {
     	 avisoDataFim.setText(" ");
 		 DateTimeFormatter formatter = DateTimeFormatter.ofPattern("dd-MM-yyyy HH:mm");		 		 
 		 LocalDateTime dataInicio = dataHoraInicioId.getValue().atTime(getHora(horaInicio), getMinuto(minutoInicio));
-		 LocalDateTime dataFim = dataHoraFimId.getValue().atTime(getHora(horaFim), getMinuto(minutoFim));		 		 
-		 if(dataFim.isAfter(dataInicio) || dataHoraFimId.getValue() == dataHoraInicioId.getValue()) {			 			 
+		 LocalDateTime dataFim = dataHoraFimId.getValue().atTime(getHora(horaFim), getMinuto(minutoFim));
+		 if(dataFim.isAfter(dataInicio) || dataFim.equals(dataInicio)) {			 			 
 			 String inicioTxt = formatter.format(dataInicio);
-			 String fimTxt = formatter.format(dataFim);			 
+			 String fimTxt = formatter.format(dataFim);
+			 
 			 editarEvento.setOnAction(new EventHandler<ActionEvent>() { @Override public void handle(ActionEvent event) { fachadaClaudia.editarEvento(selecionado, nomeId.getText(), descricaoId.getText(), inicioTxt, fimTxt); evSelecionado.setText("Evento editado com sucesso!");}} );			 
 		 } else {
-			 dataHoraFimId = dataHoraInicioId;
 			 avisoDataFim.setText("Datas incoerentes; insira um dia válido");
 			 throw new DataIncoerenteException(dataHoraFimId.getValue());
 		 }
 	 }else if(nomeId == null) {
 		 evSelecionado.setText("Campo de nome vazio");
 	 }
+    EscolhaEvento.refresh();
 	 }
 
     
