@@ -58,28 +58,16 @@ public class ControllerClaudiaAdicionarEvento {
     private Label avisoDataFim;
     
     @FXML
-    private SplitMenuButton horaInicioId;
+    private TextField horaInicio;
     
     @FXML
-    private SplitMenuButton minutoInicioId;
+    private TextField minutoInicio;
     
     @FXML
-    private SplitMenuButton horaFimId;
+    private TextField horaFim;
     
     @FXML
-    private SplitMenuButton minutoFimId;
-    
-    @FXML
-    private int horaInicio;
-    
-    @FXML
-    private int minutoInicio;
-    
-    @FXML
-    private int horaFim;
-    
-    @FXML
-    private int minutoFim;
+    private TextField minutoFim;
     
     DateTimeFormatter formatter = DateTimeFormatter.ofPattern("dd-MM-yyyy HH:mm");
     
@@ -92,7 +80,6 @@ public class ControllerClaudiaAdicionarEvento {
 	 
 	 @FXML
 	 public void cadastrar() throws EventoJaExistenteException, DataIncoerenteException {
-		 addHoraMinuto();
 		 
 		 if(nomeId != null && dataHoraInicioId.getValue() != null && dataHoraFimId.getValue() != null) {
 			 DateTimeFormatter formatter = DateTimeFormatter.ofPattern("dd-MM-yyyy HH:mm");
@@ -100,9 +87,8 @@ public class ControllerClaudiaAdicionarEvento {
 			 avisoDataFim.setText("");
 			 
 			 if(dataHoraFimId.getValue().isAfter(dataHoraInicioId.getValue()) || dataHoraFimId.getValue() == dataHoraInicioId.getValue()) {
-				 LocalDateTime dataInicio = dataHoraInicioId.getValue().atTime(horaInicio, minutoInicio);
-				 LocalDateTime dataFim = dataHoraFimId.getValue().atTime(horaFim, minutoFim);
-				 //LocalDateTime dataInicio = inicio.atTime(time);
+				 LocalDateTime dataInicio = dataHoraInicioId.getValue().atTime(getHora(horaInicio), getMinuto(minutoInicio));
+				 LocalDateTime dataFim = dataHoraFimId.getValue().atTime(getHora(horaFim), getMinuto(minutoFim));
 				 
 				 String inicioTxt = formatter.format(dataInicio);
 				 String fimTxt = formatter.format(dataFim);
@@ -112,14 +98,16 @@ public class ControllerClaudiaAdicionarEvento {
 				 e.setDataHoraInicio(inicioTxt);
 				 e.setDataHoraFim(fimTxt);
 				 //if(calendario.existe(e) != false) {
-						calendario.adicionarPorEvento(e);
+				 if(dataFim.isAfter(dataInicio)) {
+					 calendario.adicionarPorEvento(e);
 						resultado.setText("Evento criado com sucesso");
+				 }
 					//} else {
 						//throw new EventoJaExistenteException(e.getNome());
 					//}
 			 } else {
 				 dataHoraFimId = dataHoraInicioId;
-				 avisoDataFim.setText("Data de fim incoerente; insira um dia válido");
+				 avisoDataFim.setText("Datas incoerentes; insira um dia válido");
 				 throw new DataIncoerenteException(dataHoraFimId.getValue());
 			 }
 		 } else if(nomeId == null) {
@@ -127,7 +115,28 @@ public class ControllerClaudiaAdicionarEvento {
 		 }
 		 
 		 }
-
+	 
+	 @FXML
+	 public int getHora(TextField hora) throws DataIncoerenteException {
+		 if(0 < Integer.parseInt(hora.getText()) && Integer.parseInt(hora.getText()) < 23) {
+			 return Integer.parseInt(hora.getText());
+		 } else {
+			 avisoDataFim.setText("Insira um horário válido.");
+			 hora.clear();
+			 throw new DataIncoerenteException(dataHoraFimId.getValue());
+		 }
+	 }
+	 
+	 @FXML
+	 public int getMinuto(TextField minuto) throws DataIncoerenteException {
+		 if(0 < Integer.parseInt(minuto.getText()) && Integer.parseInt(minuto.getText()) < 59) {
+			 return Integer.parseInt(minuto.getText());
+		 } else {
+			 avisoDataFim.setText("Insira um horário válido.");
+			 minuto.clear();
+			 throw new DataIncoerenteException(dataHoraFimId.getValue());
+		 }
+	 }
 	 
 	 @FXML
 	 public void limparCampos() {
@@ -136,7 +145,7 @@ public class ControllerClaudiaAdicionarEvento {
 		 descricaoId.clear();
 		 resultado.setText("");
 	 }
-	 
+	 /*
 	 public void addHoraMinuto()
 	 {
 		 for(int i = 0; i <= 23; i++) {
@@ -233,6 +242,6 @@ public class ControllerClaudiaAdicionarEvento {
 			 
 		 }
 	 }
-			
+		*/	
 	
 }
