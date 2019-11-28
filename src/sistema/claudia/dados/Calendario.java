@@ -40,14 +40,17 @@ public class Calendario implements Serializable{
 		salvarArquivo();
 	}
 	
-	public Evento BuscarEventoPeloNome (String nome) {
+	public ArrayList<Evento> BuscarEventoPeloNome (String nome) {
+		ArrayList<Evento> list = new ArrayList<Evento>();
 		if(eventos != null) {
 			for (int i = 0 ; i < eventos.size() ; i++) {
 				if(eventos.get(i).getNome() == nome) {
-					return eventos.get(i);
+					list.add(eventos.get(i));
 				}
-			}	
+			}
+			return list;
 		}
+		
 		return null;
 	}
 	
