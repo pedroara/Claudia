@@ -84,9 +84,13 @@ public class ControllerClaudiaAdicionarEvento {
 			 resultado.setText("");
 			 avisoDataFim.setText("");
 			 
-			 if(dataHoraFimId.getValue().isAfter(dataHoraInicioId.getValue()) || dataHoraFimId.getValue() == dataHoraInicioId.getValue()) {
-				 LocalDateTime dataInicio = dataHoraInicioId.getValue().atTime(getHora(horaInicio), getMinuto(minutoInicio));
-				 LocalDateTime dataFim = dataHoraFimId.getValue().atTime(getHora(horaFim), getMinuto(minutoFim));
+			 
+			 LocalDateTime dataInicio = dataHoraInicioId.getValue().atTime(getHora(horaInicio), getMinuto(minutoInicio));
+			 LocalDateTime dataFim = dataHoraFimId.getValue().atTime(getHora(horaFim), getMinuto(minutoFim));
+			 
+			 
+			 if(dataFim.isAfter(dataInicio) || dataHoraFimId.getValue() == dataHoraInicioId.getValue()) {
+				 
 				 
 				 String inicioTxt = formatter.format(dataInicio);
 				 String fimTxt = formatter.format(dataFim);
@@ -116,7 +120,7 @@ public class ControllerClaudiaAdicionarEvento {
 	 
 	 @FXML
 	 public int getHora(TextField hora) throws DataIncoerenteException {
-		 if(0 < Integer.parseInt(hora.getText()) && Integer.parseInt(hora.getText()) < 23) {
+		 if(0 <= Integer.parseInt(hora.getText()) && Integer.parseInt(hora.getText()) <= 23) {
 			 return Integer.parseInt(hora.getText());
 		 } else {
 			 avisoDataFim.setText("Insira um horário válido.");
@@ -127,7 +131,7 @@ public class ControllerClaudiaAdicionarEvento {
 	 
 	 @FXML
 	 public int getMinuto(TextField minuto) throws DataIncoerenteException {
-		 if(0 < Integer.parseInt(minuto.getText()) && Integer.parseInt(minuto.getText()) < 59) {
+		 if(0 <= Integer.parseInt(minuto.getText()) && Integer.parseInt(minuto.getText()) <= 59) {
 			 return Integer.parseInt(minuto.getText());
 		 } else {
 			 avisoDataFim.setText("Insira um horário válido.");

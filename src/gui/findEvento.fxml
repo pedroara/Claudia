@@ -1,0 +1,12 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import javafx.scene.layout.AnchorPane?>
+
+<AnchorPane minWidth="1037.0" prefHeight="500.0" prefWidth="1361.0" stylesheets="@../css/whiteOnBlack.css" xmlns="http://javafx.com/javafx/11.0.1" xmlns:fx="http://javafx.com/fxml/1" fx:controller="controladoresTelas.ControllerClaudiaBuscarEvento">
+
+
+
+
+
+</AnchorPane>
+
