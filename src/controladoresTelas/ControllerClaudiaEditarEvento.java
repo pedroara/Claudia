@@ -113,30 +113,32 @@ public class ControllerClaudiaEditarEvento {
         nomeId.setText(selecionado.getNome());
         descricaoId.setText(selecionado.getDescricao());
         
-        /*dataHoraInicioId.setValue(selecionado.getDataHoraInicio().toLocalDate());
+        dataHoraInicioId.setValue(selecionado.getDataHoraInicio().toLocalDate());
         dataHoraFimId.setValue(selecionado.getDataHoraFim().toLocalDate());
         horaInicio.setText(Integer.toString(selecionado.getDataHoraInicio().getHour()));
         horaFim.setText(Integer.toString(selecionado.getDataHoraFim().getHour()));
         minutoInicio.setText(Integer.toString(selecionado.getDataHoraInicio().getMinute()));
-        minutoFim.setText(Integer.toString(selecionado.getDataHoraFim().getMinute()));*/
+        minutoFim.setText(Integer.toString(selecionado.getDataHoraFim().getMinute()));
 
-        
+        EscolhaEvento.getSelectionModel().getSelectedItem();
         //Texto pra avisar o usuário
         if (selecionado != null) {
         	evSelecionado.setText("Evento selecionado, edite-o!");
         }      
         
         
+        
     if(nomeId != null && dataHoraInicioId.getValue() != null && dataHoraFimId.getValue() != null) {
     	 avisoDataFim.setText(" ");
-		 DateTimeFormatter formatter = DateTimeFormatter.ofPattern("dd-MM-yyyy HH:mm");		 		 
+    	 DateTimeFormatter formatter = DateTimeFormatter.ofPattern("dd-MM-yyyy HH:mm");		 		 
 		 LocalDateTime dataInicio = dataHoraInicioId.getValue().atTime(getHora(horaInicio), getMinuto(minutoInicio));
 		 LocalDateTime dataFim = dataHoraFimId.getValue().atTime(getHora(horaFim), getMinuto(minutoFim));
 		 if(dataFim.isAfter(dataInicio) || dataFim.equals(dataInicio)) {			 			 
 			 String inicioTxt = formatter.format(dataInicio);
 			 String fimTxt = formatter.format(dataFim);
 			 
-			 editarEvento.setOnAction(new EventHandler<ActionEvent>() { @Override public void handle(ActionEvent event) { fachadaClaudia.editarEvento(selecionado, nomeId.getText(), descricaoId.getText(), inicioTxt, fimTxt); evSelecionado.setText("Evento editado com sucesso!");}} );			 
+			 editarEvento.setOnAction(new EventHandler<ActionEvent>() { @Override public void handle(ActionEvent event) { fachadaClaudia.editarEvento(selecionado, nomeId.getText(), descricaoId.getText(), inicioTxt, fimTxt); evSelecionado.setText("Evento editado com sucesso!");}} );
+			 EscolhaEvento.refresh();
 		 } else {
 			 avisoDataFim.setText("Datas incoerentes; insira um dia válido");
 			 throw new DataIncoerenteException(dataHoraFimId.getValue());
