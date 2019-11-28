@@ -83,8 +83,8 @@ public class ControllerClaudiaEditarEvento {
     	//Evento selecionado
         Evento selecionado = EscolhaEvento.getSelectionModel().getSelectedItem();
         //Texto pra avisar o usuário
-        if (EscolhaEvento.getSelectionModel().getSelectedItem() != null) {
-        	evSelecionado.setText("Evento selecionado, edite-o");
+        if (selecionado != null) {
+        	evSelecionado.setText("Evento selecionado, edite-o!");
         }
         //Preenchendo os campos com o texto antigo
         nomeId.setText(selecionado.getNome());

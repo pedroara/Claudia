@@ -39,7 +39,7 @@
          </children>
       </AnchorPane>
       <Label layoutX="82.0" layoutY="69.0" text="Escolha o evento:" />
-      <ListView fx:id="EscolhaEvento" layoutX="82.0" layoutY="109.0" prefHeight="360.0" prefWidth="200.0" />
+      <ListView fx:id="EscolhaEvento" layoutX="82.0" layoutY="109.0" onMouseClicked="#selecionarEvento" prefHeight="360.0" prefWidth="200.0" />
       <Label fx:id="evSelecionado" layoutX="254.0" layoutY="69.0" prefHeight="17.0" prefWidth="184.0" />
       <Label layoutX="759.0" layoutY="316.0" text="Hora de início:" />
       <Label layoutX="771.0" layoutY="372.0" text="Hora do fim:" />
@@ -227,5 +227,6 @@
             <MenuItem mnemonicParsing="false" text="59" />
          </items>
       </SplitMenuButton>
+      <Button fx:id="editarEvento" layoutX="549.0" layoutY="428.0" mnemonicParsing="false" text="Editar" />
    </children>
 </AnchorPane>
