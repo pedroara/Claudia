@@ -92,7 +92,6 @@ public class ControllerClaudiaEditarEvento {
 
     @FXML
     public int getMinuto(TextField minuto) throws DataIncoerenteException {
-
     	if(minuto.getText().isEmpty()) { 
     		return 0;
     	}
@@ -120,8 +119,7 @@ public class ControllerClaudiaEditarEvento {
         horaFim.setText(Integer.toString(selecionado.getDataHoraFim().getHour()));
         minutoInicio.setText(Integer.toString(selecionado.getDataHoraInicio().getMinute()));
         minutoFim.setText(Integer.toString(selecionado.getDataHoraFim().getMinute()));*/
-        
-        //Lógica para alteras as datas
+
         
         //Texto pra avisar o usuário
         if (selecionado != null) {
