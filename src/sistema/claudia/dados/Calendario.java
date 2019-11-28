@@ -1,5 +1,11 @@
 package sistema.claudia.dados;
 
+import java.io.File;
+import java.io.FileInputStream;
+import java.io.FileOutputStream;
+import java.io.IOException;
+import java.io.ObjectInputStream;
+import java.io.ObjectOutputStream;
 import java.time.LocalDateTime;
 import java.util.ArrayList;
 import java.util.List;
@@ -8,8 +14,10 @@ import sistema.claudia.negocio.Evento;
 public class Calendario {
 	private ArrayList<Evento> eventos;
 	
+	private static Calendario instance;
+	
 	public Calendario() {
-		eventos = new ArrayList<Evento>();
+		setEventos(eventos = new ArrayList<Evento>());
 		//Evento natal = new Evento ("Natal", "Feriado comercial", "25-12-2019 00:00", "26-12-2019 00:00");
 		Evento domingao = new Evento ("Domingao do Faustao", "Feriado mundial", "24-11-2019 00:00", "24-11-2019 23:59");
 		Evento segundao = new Evento ("Tela Quente" , "qq cosa" , "25-11-2019 00:00", "25-11-2019 23:59");
@@ -27,6 +35,8 @@ public class Calendario {
 		eventos.add(segundao);
 		eventos.add(terca);
 		eventos.add(domingao);
+		
+		salvarArquivo();
 	}
 	
 	public Evento BuscarEventoPeloNome (String nome) {
@@ -119,4 +129,57 @@ public class Calendario {
 		}
 		return false;
 	}
+	
+	public static Calendario getInstance() {
+        if (instance == null) {
+            instance = lerDoArquivo();
+        }
+        return instance;
+    }
+
+    private static Calendario lerDoArquivo() {
+        Calendario instanciaLocal = null;
+        
+        File in = new File("eventos.dat");
+        FileInputStream fis = null;
+        ObjectInputStream ois = null;
+        try {
+            fis = new FileInputStream(in);
+            ois = new ObjectInputStream(fis);
+            Object o = ois.readObject();
+            instanciaLocal = (Calendario) o;
+        } catch (Exception e) {
+            instanciaLocal = new Calendario();
+        } finally {
+            if (ois != null) {
+                try {
+                    ois.close();
+                } catch (IOException e) {/* Silent exception */
+                }
+            }
+        }
+
+        return instanciaLocal;
+    }
+
+    public void salvarArquivo() {
+        if (instance == null) {
+            return;
+        }
+        File out = new File("eventos.dat");
+        FileOutputStream fos = null;
+        ObjectOutputStream oos = null;
+        
+        try {
+            fos = new FileOutputStream(out);
+            oos = new ObjectOutputStream(fos);
+            oos.writeObject(instance);
+        } catch (Exception e) {
+            e.printStackTrace();
+        } finally {
+            if (oos != null) {
+                try { oos.close(); } catch (IOException e) {/*Silent*/}
+            }
+        }
+    }
 }
