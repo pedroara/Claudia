@@ -135,6 +135,10 @@ public class FachadaClaudia {
 		return eventosDoDia;
 	}
 	
+	public Evento buscarPorNome(String name) {
+		return calendario.buscarPorNome(name);
+	}
+	
 	public void editarEvento(Evento ev, String nome, String descricao, String dataHoraInicio, String dataHoraFim) {
 		for(int i = 0; i < calendario.getEventos().size(); i++) {
 			if(calendario.getEventos().get(i).getNome() == ev.getNome() && calendario.getEventos().get(i).getDataHoraInicio() == ev.getDataHoraInicio()) {

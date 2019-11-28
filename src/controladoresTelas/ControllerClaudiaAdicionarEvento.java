@@ -74,8 +74,11 @@ public class ControllerClaudiaAdicionarEvento {
 	 @FXML
 	 public void  initialize() {
 		 
-	ClaudiaBtn.setOnAction(new EventHandler<ActionEvent>() {@Override public void handle(ActionEvent event) {Main.loadScene("/gui/homeClaudia.fxml", "Claudia");}} );}
+		 
+		 ClaudiaBtn.setOnAction(new EventHandler<ActionEvent>() {@Override public void handle(ActionEvent event) {Main.loadScene("/gui/homeClaudia.fxml", "Claudia");}} );
+		 PesquisarBtn.setOnAction(new EventHandler<ActionEvent>() { @Override public void handle(ActionEvent event) {Main.loadScene("/gui/findEvento.fxml", "Pesquisar Evento");} } );
 	 
+	}
 	 @FXML
 	 public void cadastrar() throws EventoJaExistenteException, DataIncoerenteException {
 		 

@@ -1,9 +1,8 @@
 package controladoresTelas;
 
-import java.time.LocalDate;
+import java.time.LocalDate; 
 import java.time.LocalDateTime;
 import java.time.format.DateTimeFormatter;
-
 import gui.Main;
 import javafx.collections.FXCollections;
 import javafx.collections.ObservableList;
@@ -80,6 +79,10 @@ public class ControllerClaudiaEditarEvento {
     
     @FXML
     public int getHora(TextField hora) throws DataIncoerenteException {
+    	if(horaInicio.getText() == null || horaFim.getText() == null || horaInicio.getText() == "" || horaFim.getText() == "" ) {
+    		horaInicio.setText("00");
+    		horaFim.setText("00");
+    	}
     	 if(0 <= Integer.parseInt(hora.getText()) && Integer.parseInt(hora.getText()) <= 23) {
     		 return Integer.parseInt(hora.getText());
     	 } else {
@@ -91,6 +94,10 @@ public class ControllerClaudiaEditarEvento {
 
     @FXML
     public int getMinuto(TextField minuto) throws DataIncoerenteException {
+    	if(minutoInicio.getText() == null || minutoFim.getText() == null || minutoInicio.getText() == "" || minutoFim.getText() == "" ) {
+    		minutoInicio.setText("00");
+    		minutoFim.setText("00");
+    	}
     	 if(0 <= Integer.parseInt(minuto.getText()) && Integer.parseInt(minuto.getText()) <= 59) {
     		 return Integer.parseInt(minuto.getText());
     	 } else {
@@ -143,10 +150,6 @@ public class ControllerClaudiaEditarEvento {
     	AdicionarBtn.setOnAction(new EventHandler<ActionEvent>() { @Override public void handle(ActionEvent event) {Main.loadScene("/gui/addEvento.fxml", "Adicionar Evento");} } );
     	EditarBtn.setOnAction(new EventHandler<ActionEvent>() { @Override public void handle(ActionEvent event) {Main.loadScene("/gui/editEvento.fxml", "Editar Evento");} } );
     	ClaudiaBtn.setOnAction(new EventHandler<ActionEvent>() { @Override public void handle(ActionEvent event) {Main.loadScene("/gui/homeClaudia.fxml", "Claudia");}} ); 
-    	
-    	//Aqui Mari
-    	
-    		
     	ObservableList<Evento> listaa = FXCollections.observableArrayList(fachadaClaudia.getCalendario().getEventos());
     	EscolhaEvento.setItems(listaa);
     	

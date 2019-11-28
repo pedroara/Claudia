@@ -95,9 +95,10 @@ public class ControllerClaudiaApp {
 	public void initialize() {
 			
 		AdiconarBtn.setOnAction(new EventHandler<ActionEvent>() { @Override public void handle(ActionEvent event) {Main.loadScene("/gui/addEvento.fxml", "Adicionar Evento");} } );
+		PesquisarBtn.setOnAction(new EventHandler<ActionEvent>() { @Override public void handle(ActionEvent event) {Main.loadScene("/gui/findEvento.fxml", "Pesquisar Evento");} } );
 		EditarBtn.setOnAction(new EventHandler<ActionEvent>() { @Override public void handle(ActionEvent event) {Main.loadScene("/gui/editEvento.fxml", "Editar Evento");} } );
 		RemoverBtn.setOnAction(new EventHandler<ActionEvent>() { @Override public void handle(ActionEvent event) {Main.loadScene("/gui/removeEvento.fxml", "Remover Evento");} } );
-		
+	
 		
 		Calendar c = Calendar.getInstance();
 		
