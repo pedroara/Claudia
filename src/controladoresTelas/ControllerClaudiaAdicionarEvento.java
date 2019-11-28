@@ -18,7 +18,10 @@ import javafx.scene.control.Button;
 import javafx.scene.control.DatePicker;
 import javafx.scene.control.Label;
 import javafx.scene.control.ListView;
+<<<<<<< HEAD
 import javafx.scene.control.MenuItem;
+=======
+>>>>>>> d9870f25a5518f1f3900876df6769e78c6932cc4
 import javafx.scene.control.SplitMenuButton;
 import javafx.scene.control.TextArea;
 import javafx.scene.control.TextField;
@@ -79,6 +82,7 @@ public class ControllerClaudiaAdicionarEvento {
     @FXML
     private SplitMenuButton minutoFimId;
     
+<<<<<<< HEAD
     @FXML
     private int horaInicio;
     
@@ -90,6 +94,9 @@ public class ControllerClaudiaAdicionarEvento {
     
     @FXML
     private int minutoFim;
+=======
+    
+>>>>>>> d9870f25a5518f1f3900876df6769e78c6932cc4
     
     DateTimeFormatter formatter = DateTimeFormatter.ofPattern("dd-MM-yyyy HH:mm");
     
@@ -98,13 +105,7 @@ public class ControllerClaudiaAdicionarEvento {
 	 @FXML
 	 public void  initialize() {
 		 
-		 //Calendario calendario = new Calendario();
-		 ClaudiaBtn.setOnAction(new EventHandler<ActionEvent>() {
-
-				@Override
-				public void handle(ActionEvent event) {Main.loadScene("/gui/homeClaudia.fxml", "Claudia");}} );
-		 
-	 }
+	 ClaudiaBtn.setOnAction(new EventHandler<ActionEvent>() { @Override public void handle(ActionEvent event) {Main.loadScene("/gui/homeClaudia.fxml", "Claudia");}} ); }
 	 
 	 
 	 

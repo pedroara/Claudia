@@ -1,9 +1,14 @@
 package controladoresTelas;
 
-import java.net.URL;
+import java.net.URL; 
 import java.time.LocalDateTime;
 import java.util.Calendar;
 import java.util.ResourceBundle;
+<<<<<<< HEAD
+=======
+
+//import br.com.banco.model.domain.Cliente;
+>>>>>>> d9870f25a5518f1f3900876df6769e78c6932cc4
 import gui.Main;
 import javafx.collections.FXCollections;
 import javafx.collections.ObservableList;
@@ -99,6 +104,7 @@ public class ControllerClaudiaApp {
 	public void initialize() {
 			
 		AdiconarBtn.setOnAction(new EventHandler<ActionEvent>() { @Override public void handle(ActionEvent event) {Main.loadScene("/gui/addEvento.fxml", "Adicionar Evento");} } );
+		EditarBtn.setOnAction(new EventHandler<ActionEvent>() { @Override public void handle(ActionEvent event) {Main.loadScene("/gui/editEvento.fxml", "Editar Evento");} } );
 		
 		Calendar c = Calendar.getInstance();
 		
