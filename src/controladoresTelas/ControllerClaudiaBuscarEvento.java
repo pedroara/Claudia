@@ -39,8 +39,7 @@ public class ControllerClaudiaBuscarEvento {
     @FXML
     public void clicado()
     {
-    	ArrayList<Evento> lista = fachadaClaudia.buscarPorNome(textBuscar.getText()) ;
-    	ObservableList<Evento> list = FXCollections.observableArrayList(lista);
+    	ObservableList<Evento> list = FXCollections.observableArrayList(fachadaClaudia.buscarPorNome(textBuscar.getText()));
     	listaDoBuscar.setItems(list);
     	listaDoBuscar.refresh();
     }
@@ -49,13 +48,7 @@ public class ControllerClaudiaBuscarEvento {
     public void initialize() {
     	
     	
-//    	BuscarBut.setOnAction(new EventHandler<ActionEvent>() { @Override public void handle(ActionEvent event) {
-//    	ArrayList<Evento> lista = new ArrayList<Evento>();
-//    	Evento even = fachadaClaudia.buscarPorNome(textBuscar.getText()) ;
-//    	lista.add(even);
-//    	ObservableList<Evento> list = FXCollections.observableArrayList(lista);
-//    	listaDoBuscar.refresh();listaDoBuscar.refresh();} } );
-    	
+    	BuscarBut.setOnAction(new EventHandler<ActionEvent>() { @Override public void handle(ActionEvent event) {ObservableList<Evento> list = FXCollections.observableArrayList(fachadaClaudia.buscarPorNome(textBuscar.getText())); listaDoBuscar.setItems(list);} });    	
     	ClaudiaBtn.setOnAction(new EventHandler<ActionEvent>() {@Override public void handle(ActionEvent event) {Main.loadScene("/gui/homeClaudia.fxml", "Claudia");}} );
     	AdiconarBtn.setOnAction(new EventHandler<ActionEvent>() { @Override public void handle(ActionEvent event) {Main.loadScene("/gui/addEvento.fxml", "Adicionar Evento");} } );
     	

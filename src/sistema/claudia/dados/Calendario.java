@@ -42,16 +42,12 @@ public class Calendario implements Serializable{
 	
 	public ArrayList<Evento> BuscarEventoPeloNome (String nome) {
 		ArrayList<Evento> list = new ArrayList<Evento>();
-		if(eventos != null) {
-			for (int i = 0 ; i < eventos.size() ; i++) {
-				if(eventos.get(i).getNome() == nome) {
-					list.add(eventos.get(i));
-				}
+		for (int i = 0 ; i < eventos.size() ; i++) {
+			if(eventos.get(i).getNome().equals(nome)) {
+				list.add(eventos.get(i));
 			}
-			return list;
 		}
-		
-		return null;
+		return list;
 	}
 	
 	
