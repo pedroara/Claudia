@@ -44,6 +44,7 @@ public class FachadaClaudia {
 	public void remover(Evento e) {
 		
 		calendario.remover(e);
+		calendario.salvarArquivo();
 		
 	}
 	

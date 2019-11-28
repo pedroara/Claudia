@@ -102,6 +102,7 @@ public class ControllerClaudiaAdicionarEvento {
 				 //if(calendario.existe(e) != false) {
 				 if(dataFim.isAfter(dataInicio)) {
 					 calendario.adicionarPorEvento(e);
+					 calendario.salvarArquivo();
 						resultado.setText("Evento criado com sucesso");
 				 }
 					//} else {
@@ -147,103 +148,6 @@ public class ControllerClaudiaAdicionarEvento {
 		 descricaoId.clear();
 		 resultado.setText("");
 	 }
-	 /*
-	 public void addHoraMinuto()
-	 {
-		 for(int i = 0; i <= 23; i++) {
-			 if(i < 10) {
-				 MenuItem j = new MenuItem("0" + i);
-				 int id = i;
-				 j.setOnAction(new EventHandler<ActionEvent>() {
-				     @Override public void handle(ActionEvent e) {
-				         horaInicio = id;
-				     }
-				 });
-				 if(j != null)
-					 horaInicioId.getItems().add(j);
-				 
-			 } else {
-				 MenuItem j = new MenuItem("" + i);
-				 int id = i;
-				 j.setOnAction(new EventHandler<ActionEvent>() {
-				     @Override public void handle(ActionEvent e) {
-				         horaInicio = id;
-				     }
-				 });
-				 if(j != null) horaInicioId.getItems().add(j);
-			 }
-			 
-		 }
-		 
-		 for(int i = 0; i <= 23; i++) {
-			 if(i < 10) {
-				 MenuItem j = new MenuItem("0" + i);
-				 int id = i;
-				 j.setOnAction(new EventHandler<ActionEvent>() {
-				     @Override public void handle(ActionEvent e) {
-				         horaFim = id;
-				     }
-				 });
-				 if(j != null) horaFimId.getItems().add(j);
-			 } else {
-				 MenuItem j = new MenuItem("" + i);
-				 int id = i;
-				 j.setOnAction(new EventHandler<ActionEvent>() {
-				     @Override public void handle(ActionEvent e) {
-				         horaFim = id;
-				     }
-				 });
-				 if(j != null) horaFimId.getItems().add(j);
-			 }
-			 
-		 }
-		 
-		 for(int i = 0; i <= 59; i++) {
-			 if(i < 10) {
-				 MenuItem j = new MenuItem("0" + i);
-				 int id = i;
-				 j.setOnAction(new EventHandler<ActionEvent>() {
-				     @Override public void handle(ActionEvent e) {
-				         minutoInicio = id;
-				     }
-				 });
-				 if(j != null) minutoInicioId.getItems().add(j);
-			 } else {
-				 MenuItem j = new MenuItem("" + i);
-				 int id = i;
-				 j.setOnAction(new EventHandler<ActionEvent>() {
-				     @Override public void handle(ActionEvent e) {
-				         minutoInicio = id;
-				     }
-				 });
-				 if(j != null) minutoInicioId.getItems().add(j);
-			 }
-			 
-		 }
-		 
-		 for(int i = 0; i <= 59; i++) {
-			 if(i < 10) {
-				 MenuItem j = new MenuItem("0" + i);
-				 int id = i;
-				 j.setOnAction(new EventHandler<ActionEvent>() {
-				     @Override public void handle(ActionEvent e) {
-				         minutoFim = id;
-				     }
-				 });
-				 if(j != null) minutoFimId.getItems().add(j);
-			 } else {
-				 MenuItem j = new MenuItem("" + i);
-				 int id = i;
-				 j.setOnAction(new EventHandler<ActionEvent>() {
-				     @Override public void handle(ActionEvent e) {
-				         minutoFim = id;
-				     }
-				 });
-				 if(j != null) minutoFimId.getItems().add(j);
-			 }
-			 
-		 }
-	 }
-		*/	
+
 	
 }
