@@ -1,8 +1,9 @@
 package controladoresTelas;
 
-import java.time.LocalDate; 
+import java.time.LocalDate;
 import java.time.LocalDateTime;
 import java.time.format.DateTimeFormatter;
+
 import gui.Main;
 import javafx.collections.FXCollections;
 import javafx.collections.ObservableList;
@@ -79,18 +80,10 @@ public class ControllerClaudiaEditarEvento {
     
     @FXML
     public int getHora(TextField hora) throws DataIncoerenteException {
-<<<<<<< HEAD
-    	if(horaInicio.getText() == null || horaFim.getText() == null || horaInicio.getText() == "" || horaFim.getText() == "" ) {
-    		horaInicio.setText("00");
-    		horaFim.setText("00");
-    	}
-    	 if(0 <= Integer.parseInt(hora.getText()) && Integer.parseInt(hora.getText()) <= 23) {
-=======
     	if(hora.getText().isEmpty()) { 
     		return 0;
     	}
     	if(0 <= Integer.parseInt(hora.getText()) && Integer.parseInt(hora.getText()) <= 23) {
->>>>>>> 75535bcb97397d0166ba25d6dcdf07e270a56984
     		 return Integer.parseInt(hora.getText());
     	 } else {
     		 avisoDataFim.setText("Insira um horário válido.");
@@ -101,18 +94,10 @@ public class ControllerClaudiaEditarEvento {
 
     @FXML
     public int getMinuto(TextField minuto) throws DataIncoerenteException {
-<<<<<<< HEAD
-    	if(minutoInicio.getText() == null || minutoFim.getText() == null || minutoInicio.getText() == "" || minutoFim.getText() == "" ) {
-    		minutoInicio.setText("00");
-    		minutoFim.setText("00");
-    	}
-    	 if(0 <= Integer.parseInt(minuto.getText()) && Integer.parseInt(minuto.getText()) <= 59) {
-=======
     	if(minuto.getText().isEmpty()) { 
     		return 0;
     	}
     	if(0 <= Integer.parseInt(minuto.getText()) && Integer.parseInt(minuto.getText()) <= 59) {
->>>>>>> 75535bcb97397d0166ba25d6dcdf07e270a56984
     		 return Integer.parseInt(minuto.getText());
     	 } else {
     		 avisoDataFim.setText("Insira um horário válido.");
@@ -135,8 +120,7 @@ public class ControllerClaudiaEditarEvento {
         horaFim.setText(Integer.toString(selecionado.getDataHoraFim().getHour()));
         minutoInicio.setText(Integer.toString(selecionado.getDataHoraInicio().getMinute()));
         minutoFim.setText(Integer.toString(selecionado.getDataHoraFim().getMinute()));*/
-        
-        //Lógica para alteras as datas
+
         
         //Texto pra avisar o usuário
         if (selecionado != null) {
@@ -170,6 +154,10 @@ public class ControllerClaudiaEditarEvento {
     	AdicionarBtn.setOnAction(new EventHandler<ActionEvent>() { @Override public void handle(ActionEvent event) {Main.loadScene("/gui/addEvento.fxml", "Adicionar Evento");} } );
     	EditarBtn.setOnAction(new EventHandler<ActionEvent>() { @Override public void handle(ActionEvent event) {Main.loadScene("/gui/editEvento.fxml", "Editar Evento");} } );
     	ClaudiaBtn.setOnAction(new EventHandler<ActionEvent>() { @Override public void handle(ActionEvent event) {Main.loadScene("/gui/homeClaudia.fxml", "Claudia");}} ); 
+    	
+    	//Aqui Mari
+    	
+    		
     	ObservableList<Evento> listaa = FXCollections.observableArrayList(fachadaClaudia.getCalendario().getEventos());
     	EscolhaEvento.setItems(listaa);
     	
