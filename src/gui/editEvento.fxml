@@ -4,8 +4,6 @@
 <?import javafx.scene.control.DatePicker?>
 <?import javafx.scene.control.Label?>
 <?import javafx.scene.control.ListView?>
-<?import javafx.scene.control.MenuItem?>
-<?import javafx.scene.control.SplitMenuButton?>
 <?import javafx.scene.control.TextField?>
 <?import javafx.scene.control.ToolBar?>
 <?import javafx.scene.layout.AnchorPane?>
@@ -40,193 +38,26 @@
       </AnchorPane>
       <Label layoutX="82.0" layoutY="69.0" text="Escolha o evento:" />
       <ListView fx:id="EscolhaEvento" layoutX="82.0" layoutY="109.0" onMouseClicked="#selecionarEvento" prefHeight="360.0" prefWidth="200.0" />
-      <Label fx:id="evSelecionado" layoutX="254.0" layoutY="69.0" prefHeight="17.0" prefWidth="184.0" />
+      <Label fx:id="evSelecionado" layoutX="245.0" layoutY="63.0" prefHeight="30.0" prefWidth="304.0">
+         <font>
+            <Font size="25.0" />
+         </font></Label>
+      <Button fx:id="editarEvento" layoutX="549.0" layoutY="428.0" mnemonicParsing="false" text="Editar" />
       <Label layoutX="759.0" layoutY="316.0" text="Hora de início:" />
       <Label layoutX="771.0" layoutY="372.0" text="Hora do fim:" />
-      <SplitMenuButton layoutX="855.0" layoutY="312.0" mnemonicParsing="false" text="HH">
-         <items>
-            <MenuItem mnemonicParsing="false" text="00" />
-            <MenuItem mnemonicParsing="false" text="01" />
-            <MenuItem mnemonicParsing="false" text="02" />
-            <MenuItem mnemonicParsing="false" text="03" />
-            <MenuItem mnemonicParsing="false" text="04" />
-            <MenuItem mnemonicParsing="false" text="05" />
-            <MenuItem mnemonicParsing="false" text="06" />
-            <MenuItem mnemonicParsing="false" text="07" />
-            <MenuItem mnemonicParsing="false" text="08" />
-            <MenuItem mnemonicParsing="false" text="09" />
-            <MenuItem mnemonicParsing="false" text="10" />
-            <MenuItem mnemonicParsing="false" text="11" />
-            <MenuItem mnemonicParsing="false" text="12" />
-            <MenuItem mnemonicParsing="false" text="13" />
-            <MenuItem mnemonicParsing="false" text="14" />
-            <MenuItem mnemonicParsing="false" text="15" />
-            <MenuItem mnemonicParsing="false" text="16" />
-            <MenuItem mnemonicParsing="false" text="17" />
-            <MenuItem mnemonicParsing="false" text="18" />
-            <MenuItem mnemonicParsing="false" text="19" />
-            <MenuItem mnemonicParsing="false" text="20" />
-            <MenuItem mnemonicParsing="false" text="21" />
-            <MenuItem mnemonicParsing="false" text="22" />
-            <MenuItem mnemonicParsing="false" text="23" />
-         </items>
-      </SplitMenuButton>
-      <SplitMenuButton layoutX="855.0" layoutY="369.0" mnemonicParsing="false" text="HH">
-         <items>
-            <MenuItem mnemonicParsing="false" text="00" />
-            <MenuItem mnemonicParsing="false" text="01" />
-            <MenuItem mnemonicParsing="false" text="02" />
-            <MenuItem mnemonicParsing="false" text="03" />
-            <MenuItem mnemonicParsing="false" text="04" />
-            <MenuItem mnemonicParsing="false" text="05" />
-            <MenuItem mnemonicParsing="false" text="06" />
-            <MenuItem mnemonicParsing="false" text="07" />
-            <MenuItem mnemonicParsing="false" text="08" />
-            <MenuItem mnemonicParsing="false" text="09" />
-            <MenuItem mnemonicParsing="false" text="10" />
-            <MenuItem mnemonicParsing="false" text="11" />
-            <MenuItem mnemonicParsing="false" text="12" />
-            <MenuItem mnemonicParsing="false" text="13" />
-            <MenuItem mnemonicParsing="false" text="14" />
-            <MenuItem mnemonicParsing="false" text="15" />
-            <MenuItem mnemonicParsing="false" text="16" />
-            <MenuItem mnemonicParsing="false" text="17" />
-            <MenuItem mnemonicParsing="false" text="18" />
-            <MenuItem mnemonicParsing="false" text="19" />
-            <MenuItem mnemonicParsing="false" text="20" />
-            <MenuItem mnemonicParsing="false" text="21" />
-            <MenuItem mnemonicParsing="false" text="22" />
-            <MenuItem mnemonicParsing="false" text="23" />
-         </items>
-      </SplitMenuButton>
-      <SplitMenuButton layoutX="928.0" layoutY="312.0" mnemonicParsing="false" text="mm">
-         <items>
-            <MenuItem mnemonicParsing="false" text="00" />
-            <MenuItem mnemonicParsing="false" text="01" />
-            <MenuItem mnemonicParsing="false" text="02" />
-            <MenuItem mnemonicParsing="false" text="03" />
-            <MenuItem mnemonicParsing="false" text="04" />
-            <MenuItem mnemonicParsing="false" text="05" />
-            <MenuItem mnemonicParsing="false" text="06" />
-            <MenuItem mnemonicParsing="false" text="07" />
-            <MenuItem mnemonicParsing="false" text="08" />
-            <MenuItem mnemonicParsing="false" text="09" />
-            <MenuItem mnemonicParsing="false" text="10" />
-            <MenuItem mnemonicParsing="false" text="11" />
-            <MenuItem mnemonicParsing="false" text="12" />
-            <MenuItem mnemonicParsing="false" text="13" />
-            <MenuItem mnemonicParsing="false" text="14" />
-            <MenuItem mnemonicParsing="false" text="15" />
-            <MenuItem mnemonicParsing="false" text="16" />
-            <MenuItem mnemonicParsing="false" text="17" />
-            <MenuItem mnemonicParsing="false" text="18" />
-            <MenuItem mnemonicParsing="false" text="19" />
-            <MenuItem mnemonicParsing="false" text="20" />
-            <MenuItem mnemonicParsing="false" text="21" />
-            <MenuItem mnemonicParsing="false" text="22" />
-            <MenuItem mnemonicParsing="false" text="23" />
-            <MenuItem mnemonicParsing="false" text="24" />
-            <MenuItem mnemonicParsing="false" text="25" />
-            <MenuItem mnemonicParsing="false" text="26" />
-            <MenuItem mnemonicParsing="false" text="27" />
-            <MenuItem mnemonicParsing="false" text="28" />
-            <MenuItem mnemonicParsing="false" text="29" />
-            <MenuItem mnemonicParsing="false" text="30" />
-            <MenuItem mnemonicParsing="false" text="31" />
-            <MenuItem mnemonicParsing="false" text="32" />
-            <MenuItem mnemonicParsing="false" text="33" />
-            <MenuItem mnemonicParsing="false" text="34" />
-            <MenuItem mnemonicParsing="false" text="35" />
-            <MenuItem mnemonicParsing="false" text="36" />
-            <MenuItem mnemonicParsing="false" text="37" />
-            <MenuItem mnemonicParsing="false" text="38" />
-            <MenuItem mnemonicParsing="false" text="39" />
-            <MenuItem mnemonicParsing="false" text="40" />
-            <MenuItem mnemonicParsing="false" text="41" />
-            <MenuItem mnemonicParsing="false" text="42" />
-            <MenuItem mnemonicParsing="false" text="43" />
-            <MenuItem mnemonicParsing="false" text="44" />
-            <MenuItem mnemonicParsing="false" text="45" />
-            <MenuItem mnemonicParsing="false" text="46" />
-            <MenuItem mnemonicParsing="false" text="47" />
-            <MenuItem mnemonicParsing="false" text="48" />
-            <MenuItem mnemonicParsing="false" text="49" />
-            <MenuItem mnemonicParsing="false" text="50" />
-            <MenuItem mnemonicParsing="false" text="51" />
-            <MenuItem mnemonicParsing="false" text="52" />
-            <MenuItem mnemonicParsing="false" text="53" />
-            <MenuItem mnemonicParsing="false" text="54" />
-            <MenuItem mnemonicParsing="false" text="55" />
-            <MenuItem mnemonicParsing="false" text="56" />
-            <MenuItem mnemonicParsing="false" text="57" />
-            <MenuItem mnemonicParsing="false" text="58" />
-            <MenuItem mnemonicParsing="false" text="59" />
-         </items>
-      </SplitMenuButton>
-      <SplitMenuButton layoutX="928.0" layoutY="368.0" mnemonicParsing="false" text="mm">
-         <items>
-            <MenuItem mnemonicParsing="false" text="00" />
-            <MenuItem mnemonicParsing="false" text="01" />
-            <MenuItem mnemonicParsing="false" text="02" />
-            <MenuItem mnemonicParsing="false" text="03" />
-            <MenuItem mnemonicParsing="false" text="04" />
-            <MenuItem mnemonicParsing="false" text="05" />
-            <MenuItem mnemonicParsing="false" text="06" />
-            <MenuItem mnemonicParsing="false" text="07" />
-            <MenuItem mnemonicParsing="false" text="08" />
-            <MenuItem mnemonicParsing="false" text="09" />
-            <MenuItem mnemonicParsing="false" text="10" />
-            <MenuItem mnemonicParsing="false" text="11" />
-            <MenuItem mnemonicParsing="false" text="12" />
-            <MenuItem mnemonicParsing="false" text="13" />
-            <MenuItem mnemonicParsing="false" text="14" />
-            <MenuItem mnemonicParsing="false" text="15" />
-            <MenuItem mnemonicParsing="false" text="16" />
-            <MenuItem mnemonicParsing="false" text="17" />
-            <MenuItem mnemonicParsing="false" text="18" />
-            <MenuItem mnemonicParsing="false" text="19" />
-            <MenuItem mnemonicParsing="false" text="20" />
-            <MenuItem mnemonicParsing="false" text="21" />
-            <MenuItem mnemonicParsing="false" text="22" />
-            <MenuItem mnemonicParsing="false" text="23" />
-            <MenuItem mnemonicParsing="false" text="24" />
-            <MenuItem mnemonicParsing="false" text="25" />
-            <MenuItem mnemonicParsing="false" text="26" />
-            <MenuItem mnemonicParsing="false" text="27" />
-            <MenuItem mnemonicParsing="false" text="28" />
-            <MenuItem mnemonicParsing="false" text="29" />
-            <MenuItem mnemonicParsing="false" text="30" />
-            <MenuItem mnemonicParsing="false" text="31" />
-            <MenuItem mnemonicParsing="false" text="32" />
-            <MenuItem mnemonicParsing="false" text="33" />
-            <MenuItem mnemonicParsing="false" text="34" />
-            <MenuItem mnemonicParsing="false" text="35" />
-            <MenuItem mnemonicParsing="false" text="36" />
-            <MenuItem mnemonicParsing="false" text="37" />
-            <MenuItem mnemonicParsing="false" text="38" />
-            <MenuItem mnemonicParsing="false" text="39" />
-            <MenuItem mnemonicParsing="false" text="40" />
-            <MenuItem mnemonicParsing="false" text="41" />
-            <MenuItem mnemonicParsing="false" text="42" />
-            <MenuItem mnemonicParsing="false" text="43" />
-            <MenuItem mnemonicParsing="false" text="44" />
-            <MenuItem mnemonicParsing="false" text="45" />
-            <MenuItem mnemonicParsing="false" text="46" />
-            <MenuItem mnemonicParsing="false" text="47" />
-            <MenuItem mnemonicParsing="false" text="48" />
-            <MenuItem mnemonicParsing="false" text="49" />
-            <MenuItem mnemonicParsing="false" text="50" />
-            <MenuItem mnemonicParsing="false" text="51" />
-            <MenuItem mnemonicParsing="false" text="52" />
-            <MenuItem mnemonicParsing="false" text="53" />
-            <MenuItem mnemonicParsing="false" text="54" />
-            <MenuItem mnemonicParsing="false" text="55" />
-            <MenuItem mnemonicParsing="false" text="56" />
-            <MenuItem mnemonicParsing="false" text="57" />
-            <MenuItem mnemonicParsing="false" text="58" />
-            <MenuItem mnemonicParsing="false" text="59" />
-         </items>
-      </SplitMenuButton>
-      <Button fx:id="editarEvento" layoutX="549.0" layoutY="428.0" mnemonicParsing="false" text="Editar" />
+      <TextField fx:id="horaInicio" layoutX="869.0" layoutY="311.0" prefHeight="26.0" prefWidth="29.0" />
+      <TextField fx:id="minutoInicio" layoutX="928.0" layoutY="311.0" prefHeight="26.0" prefWidth="29.0" />
+      <Label layoutX="910.0" layoutY="315.0" prefHeight="18.0" prefWidth="6.0" text=":" textAlignment="CENTER">
+         <font>
+            <Font size="16.0" />
+         </font>
+      </Label>
+      <TextField fx:id="horaFim" layoutX="869.0" layoutY="367.0" prefHeight="26.0" prefWidth="29.0" />
+      <TextField fx:id="minutoFim" layoutX="928.0" layoutY="367.0" prefHeight="26.0" prefWidth="29.0" />
+      <Label layoutX="910.0" layoutY="371.0" prefHeight="18.0" prefWidth="6.0" text=":" textAlignment="CENTER">
+         <font>
+            <Font size="16.0" />
+         </font>
+      </Label>
    </children>
 </AnchorPane>

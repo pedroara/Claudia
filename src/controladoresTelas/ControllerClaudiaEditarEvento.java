@@ -49,16 +49,16 @@ public class ControllerClaudiaEditarEvento {
     private DatePicker dataHoraFimId;
     
     @FXML
-    private int horaInicio;
+    private TextField horaInicio;
     
     @FXML
-    private int minutoInicio;
+    private TextField minutoInicio;
     
     @FXML
-    private int horaFim;
+    private TextField horaFim;
     
     @FXML
-    private int minutoFim;
+    private TextField minutoFim;
 
     @FXML
     private Label avisoDataFim;
@@ -79,42 +79,64 @@ public class ControllerClaudiaEditarEvento {
     private Label evSelecionado;
     
     @FXML
+    public int getHora(TextField hora) throws DataIncoerenteException {
+    	 if(0 <= Integer.parseInt(hora.getText()) && Integer.parseInt(hora.getText()) <= 23) {
+    		 return Integer.parseInt(hora.getText());
+    	 } else {
+    		 avisoDataFim.setText("Insira um horário válido.");
+    		 hora.clear();
+    		 throw new DataIncoerenteException(dataHoraFimId.getValue());
+    	 }
+    }
+
+    @FXML
+    public int getMinuto(TextField minuto) throws DataIncoerenteException {
+    	 if(0 <= Integer.parseInt(minuto.getText()) && Integer.parseInt(minuto.getText()) <= 59) {
+    		 return Integer.parseInt(minuto.getText());
+    	 } else {
+    		 avisoDataFim.setText("Insira um horário válido.");
+    		 minuto.clear();
+    		 throw new DataIncoerenteException(dataHoraFimId.getValue());
+    	 }
+    }
+    
+    @FXML
     public void selecionarEvento(MouseEvent arg0) throws DataIncoerenteException {
+    	
     	//Evento selecionado
         Evento selecionado = EscolhaEvento.getSelectionModel().getSelectedItem();
-        //Texto pra avisar o usuário
-        if (selecionado != null) {
-        	evSelecionado.setText("Evento selecionado, edite-o!");
-        }
         //Preenchendo os campos com o texto antigo
         nomeId.setText(selecionado.getNome());
         descricaoId.setText(selecionado.getDescricao());
+        dataHoraInicioId.setValue(selecionado.getDataHoraInicio().toLocalDate());
+        dataHoraFimId.setValue(selecionado.getDataHoraFim().toLocalDate());
+        
         //Lógica para alteras as datas
         
-        if(nomeId != null && dataHoraInicioId.getValue() != null && dataHoraFimId.getValue() != null) {
-        	
-			 DateTimeFormatter formatter = DateTimeFormatter.ofPattern("dd-MM-yyyy HH:mm");
-			 
-			 if(dataHoraFimId.getValue().isAfter(dataHoraInicioId.getValue()) || dataHoraFimId.getValue() == dataHoraInicioId.getValue()) {
-				 
-				 LocalDateTime dataInicio = dataHoraInicioId.getValue().atTime(horaInicio, minutoInicio);
-				 LocalDateTime dataFim = dataHoraFimId.getValue().atTime(horaFim, minutoFim);
-				 
-				 String inicioTxt = formatter.format(dataInicio);
-				 String fimTxt = formatter.format(dataFim);
-				 //Pra editar o evento e depois voltar automaticamente pra tela de inicio:
-				 editarEvento.setOnAction(new EventHandler<ActionEvent>() { @Override public void handle(ActionEvent event) { fachadaClaudia.editarEvento(selecionado, nomeId.getText(), descricaoId.getText(), inicioTxt, fimTxt); Main.loadScene("/gui/homeClaudia.fxml", "Claudia");}} );
-				 
+        //Texto pra avisar o usuário
+        if (selecionado != null) {
+        	evSelecionado.setText("Evento selecionado, edite-o!");
+        }      
+        
+    if(nomeId != null && dataHoraInicioId.getValue() != null && dataHoraFimId.getValue() != null) {
+    	 avisoDataFim.setText(" ");
+		 DateTimeFormatter formatter = DateTimeFormatter.ofPattern("dd-MM-yyyy HH:mm");		 		 
+		 LocalDateTime dataInicio = dataHoraInicioId.getValue().atTime(getHora(horaInicio), getMinuto(minutoInicio));
+		 LocalDateTime dataFim = dataHoraFimId.getValue().atTime(getHora(horaFim), getMinuto(minutoFim));		 		 
+		 if(dataFim.isAfter(dataInicio) || dataHoraFimId.getValue() == dataHoraInicioId.getValue()) {			 			 
+			 String inicioTxt = formatter.format(dataInicio);
+			 String fimTxt = formatter.format(dataFim);			 
+			 editarEvento.setOnAction(new EventHandler<ActionEvent>() { @Override public void handle(ActionEvent event) { fachadaClaudia.editarEvento(selecionado, nomeId.getText(), descricaoId.getText(), inicioTxt, fimTxt); evSelecionado.setText("Evento editado com sucesso!");}} );			 
+		 } else {
+			 dataHoraFimId = dataHoraInicioId;
+			 avisoDataFim.setText("Datas incoerentes; insira um dia válido");
+			 throw new DataIncoerenteException(dataHoraFimId.getValue());
+		 }
+	 }else if(nomeId == null) {
+		 evSelecionado.setText("Campo de nome vazio");
+	 }
+	 }
 
-			 } else {
-				 dataHoraFimId = dataHoraInicioId;
-				 avisoDataFim.setText("Data de fim incoerente; insira um dia válido");
-				 throw new DataIncoerenteException(dataHoraFimId.getValue());
-			 }
-		 } else if(nomeId == null) {
-			 evSelecionado.setText("Campo de nome vazio");
-		 }                      
-    }
     
     public void initialize() {
     	

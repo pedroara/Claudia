@@ -136,11 +136,11 @@ public class FachadaClaudia {
 	
 	public void editarEvento(Evento ev, String nome, String descricao, String dataHoraInicio, String dataHoraFim) {
 		for(int i = 0; i < calendario.getEventos().size(); i++) {
-			if(ev ==calendario.getEventos().get(i)) {
-				ev.setNome(nome);
-				ev.setDescricao(descricao);
-				ev.setDataHoraInicio(dataHoraInicio);
-				ev.setDataHoraFim(dataHoraFim);				
+			if(calendario.getEventos().get(i).getNome() == ev.getNome() && calendario.getEventos().get(i).getDataHoraInicio() == ev.getDataHoraInicio()) {
+				calendario.getEventos().get(i).setNome(nome);
+				calendario.getEventos().get(i).setDescricao(descricao);
+				calendario.getEventos().get(i).setDataHoraInicio(dataHoraInicio);
+				calendario.getEventos().get(i).setDataHoraFim(dataHoraFim);				
 			}
 		}		
 	}
