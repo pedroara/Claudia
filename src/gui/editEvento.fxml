@@ -9,7 +9,7 @@
 <?import javafx.scene.layout.AnchorPane?>
 <?import javafx.scene.text.Font?>
 
-<AnchorPane minWidth="1037.0" prefHeight="500.0" prefWidth="1361.0" stylesheets="@../css/whiteOnBlack.css" xmlns="http://javafx.com/javafx/8.0.171" xmlns:fx="http://javafx.com/fxml/1" fx:controller="controladoresTelas.ControllerClaudiaEditarEvento">
+<AnchorPane minWidth="1037.0" prefHeight="500.0" prefWidth="1361.0" stylesheets="@../css/whiteOnBlack.css" xmlns="http://javafx.com/javafx/11.0.1" xmlns:fx="http://javafx.com/fxml/1" fx:controller="controladoresTelas.ControllerClaudiaEditarEvento">
    <children>
       <ToolBar prefHeight="40.0" prefWidth="1361.0">
         <items>
@@ -37,12 +37,12 @@
          </children>
       </AnchorPane>
       <Label layoutX="82.0" layoutY="69.0" text="Escolha o evento:" />
-      <ListView fx:id="EscolhaEvento" layoutX="82.0" layoutY="109.0" onMouseClicked="#selecionarEvento" prefHeight="360.0" prefWidth="200.0" />
+      <ListView fx:id="EscolhaEvento" layoutX="82.0" layoutY="109.0" onInputMethodTextChanged="#recarregarEventoBotao" onMouseClicked="#selecionarEvento" prefHeight="360.0" prefWidth="200.0" />
       <Label fx:id="evSelecionado" layoutX="245.0" layoutY="63.0" prefHeight="30.0" prefWidth="304.0">
          <font>
             <Font size="25.0" />
          </font></Label>
-      <Button fx:id="editarEvento" layoutX="549.0" layoutY="428.0" mnemonicParsing="false" text="Editar" />
+      <Button fx:id="editarEvento" layoutX="549.0" layoutY="428.0" mnemonicParsing="false" onAction="#recarregarEventoBotao" text="Editar" />
       <Label layoutX="759.0" layoutY="316.0" text="Hora de início:" />
       <Label layoutX="771.0" layoutY="372.0" text="Hora do fim:" />
       <TextField fx:id="horaInicio" layoutX="869.0" layoutY="311.0" prefHeight="26.0" prefWidth="29.0" />
