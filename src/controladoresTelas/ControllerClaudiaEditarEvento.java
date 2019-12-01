@@ -139,7 +139,7 @@ public class ControllerClaudiaEditarEvento {
 			 String inicioTxt = formatter.format(dataInicio);
 			 String fimTxt = formatter.format(dataFim);
 			 
-			 editarEvento.setOnAction(new EventHandler<ActionEvent>() { @Override public void handle(ActionEvent event) { fachadaClaudia.editarEvento(selecionado, nomeId.getText(), descricaoId.getText(), inicioTxt, fimTxt); evSelecionado.setText("Evento editado com sucesso!");}} );
+			 editarEvento.setOnAction(new EventHandler<ActionEvent>() { @Override public void handle(ActionEvent event) { fachadaClaudia.editarEvento(selecionado, nomeId.getText(), descricaoId.getText(), inicioTxt, fimTxt); evSelecionado.setText("Evento editado com sucesso!"); Main.loadScene("/gui/editEvento.fxml", "Editar Evento");}} );
 
 		 } else {
 			 avisoDataFim.setText("Datas incoerentes; insira um dia válido");
@@ -150,11 +150,10 @@ public class ControllerClaudiaEditarEvento {
 	 }
    
     editarEvento.setOnMouseClicked(new EventHandler<MouseEvent>() { public void handle(ActionEvent event) {
-	    ObservableList<Evento> listaa = FXCollections.observableArrayList(fachadaClaudia.getCalendario().getEventos());
-	    
+	    ObservableList<Evento> listaa = FXCollections.observableArrayList(fachadaClaudia.getCalendario().getEventos());	    
 	    EscolhaEvento.getItems().clear();
 	    EscolhaEvento.getItems().setAll(listaa);
-	    EscolhaEvento.refresh();
+	    EscolhaEvento.refresh();	    
     }
 
 	@Override
