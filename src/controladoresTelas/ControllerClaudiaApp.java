@@ -88,9 +88,6 @@ public class ControllerClaudiaApp {
     @FXML
     private Label sabadoDia;
     
-//    @FXML
-//    private Label avisoRemover;
-    
     
 	public void initialize() {
 			
@@ -103,6 +100,7 @@ public class ControllerClaudiaApp {
 		Calendar c = Calendar.getInstance();
 		
 		c.setWeekDate(c.get(Calendar.YEAR), c.get(Calendar.WEEK_OF_YEAR), 1);
+		
 		domingoDia.setText("" + c.get(Calendar.DAY_OF_MONTH));
 		c.add(Calendar.DAY_OF_MONTH, 1);
 		segundaDia.setText("" + c.get(Calendar.DAY_OF_MONTH));
@@ -116,7 +114,6 @@ public class ControllerClaudiaApp {
 		sextaDia.setText("" + c.get(Calendar.DAY_OF_MONTH));
 		c.add(Calendar.DAY_OF_MONTH, 1);
 		sabadoDia.setText("" + c.get(Calendar.DAY_OF_MONTH));
-		
 		
 		ObservableList<Evento> dataDom = FXCollections.observableArrayList(fachadaClaudia.getListDomingo());
 		ObservableList<Evento> dataSeg = FXCollections.observableArrayList(fachadaClaudia.getListSegunda());

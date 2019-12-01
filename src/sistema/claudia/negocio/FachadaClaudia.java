@@ -1,10 +1,12 @@
 package sistema.claudia.negocio;
 
 
-import java.time.DayOfWeek;
+import java.time.DayOfWeek; 
 import java.time.LocalDate;
 import java.time.LocalDateTime;
 import java.util.ArrayList;
+import java.util.Calendar;
+
 import sistema.claudia.dados.Calendario;
 import sistema.claudia.exceptions.EventoJaExistenteException;
 import sistema.claudia.negocio.Evento;
@@ -49,16 +51,16 @@ public class FachadaClaudia {
 		
 	}
 	
+	
+	
 	public ArrayList<Evento> getListDomingo(){
 		ArrayList<Evento> eventossDoDia = new ArrayList<>();
-		for (int i = 0 ; i < calendario.getEventos().size(); i++) {
-			LocalDateTime.now().getDayOfWeek();
-			if(calendario.getEventos().get(i).getDataHoraInicio().getDayOfWeek() == DayOfWeek.SUNDAY) {
-				eventossDoDia.add(calendario.getEventos().get(i));
-			}
+
 		}
 		return eventossDoDia;
 	}
+	
+	
 	
 	public ArrayList<Evento> getListSegunda(){
 		ArrayList<Evento> eventossDoDia = new ArrayList<>();
