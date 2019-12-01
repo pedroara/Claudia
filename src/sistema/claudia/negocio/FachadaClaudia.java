@@ -51,8 +51,8 @@ public class FachadaClaudia {
 		ArrayList<Evento> eventossDoDia = new ArrayList<>();
 		for (int i = 0 ; i < calendario.getEventos().size(); i++) {
 			if(calendario.getEventos().get(i).getDataHoraInicio().getDayOfWeek() == DayOfWeek.SUNDAY 
-					&& LocalDateTime.now().getLong(ChronoField.ALIGNED_WEEK_OF_YEAR) ==
-					calendario.getEventos().get(i).getDataHoraInicio().getLong(ChronoField.ALIGNED_WEEK_OF_YEAR)) {
+					&& LocalDateTime.now().getLong(ChronoField.ALIGNED_WEEK_OF_MONTH) ==
+					calendario.getEventos().get(i).getDataHoraInicio().getLong(ChronoField.ALIGNED_WEEK_OF_MONTH)) {
 				eventossDoDia.add(calendario.getEventos().get(i));
 			}
 		}
@@ -65,8 +65,8 @@ public class FachadaClaudia {
 		ArrayList<Evento> eventossDoDia = new ArrayList<>();
 		for (int i = 0 ; i < calendario.getEventos().size(); i++) {
 			if(calendario.getEventos().get(i).getDataHoraInicio().getDayOfWeek() == DayOfWeek.MONDAY 
-					&& LocalDateTime.now().getLong(ChronoField.ALIGNED_WEEK_OF_YEAR) ==
-					calendario.getEventos().get(i).getDataHoraInicio().getLong(ChronoField.ALIGNED_WEEK_OF_YEAR)) {
+					&& LocalDateTime.now().getLong(ChronoField.ALIGNED_WEEK_OF_MONTH) ==
+					calendario.getEventos().get(i).getDataHoraInicio().getLong(ChronoField.ALIGNED_WEEK_OF_MONTH)) {
 				eventossDoDia.add(calendario.getEventos().get(i));
 			}
 		}
@@ -76,10 +76,9 @@ public class FachadaClaudia {
 	public ArrayList<Evento> getListTerca(){
 		ArrayList<Evento> eventossDoDia = new ArrayList<Evento>();
 		for (int i = 0 ; i < calendario.getEventos().size(); i++) {
-			LocalDateTime.now().getDayOfWeek();
 			if(calendario.getEventos().get(i).getDataHoraInicio().getDayOfWeek() == DayOfWeek.TUESDAY 
-					&& LocalDateTime.now().getLong(ChronoField.ALIGNED_WEEK_OF_YEAR) ==
-					calendario.getEventos().get(i).getDataHoraInicio().getLong(ChronoField.ALIGNED_WEEK_OF_YEAR)) {
+					&& LocalDateTime.now().getLong(ChronoField.ALIGNED_WEEK_OF_MONTH) ==
+					calendario.getEventos().get(i).getDataHoraInicio().getLong(ChronoField.ALIGNED_WEEK_OF_MONTH)) {
 				eventossDoDia.add(calendario.getEventos().get(i));
 			}
 		}
@@ -89,10 +88,9 @@ public class FachadaClaudia {
 	public ArrayList<Evento> getListQuarta(){
 		ArrayList<Evento> eventossDoDia = new ArrayList<>();
 		for (int i = 0 ; i < calendario.getEventos().size(); i++) {
-			LocalDateTime.now().getDayOfWeek();
 			if(calendario.getEventos().get(i).getDataHoraInicio().getDayOfWeek() == DayOfWeek.WEDNESDAY 
-					&& LocalDateTime.now().getLong(ChronoField.ALIGNED_WEEK_OF_YEAR) ==
-					calendario.getEventos().get(i).getDataHoraInicio().getLong(ChronoField.ALIGNED_WEEK_OF_YEAR)) {
+					&& LocalDateTime.now().getLong(ChronoField.ALIGNED_WEEK_OF_MONTH) ==
+					calendario.getEventos().get(i).getDataHoraInicio().getLong(ChronoField.ALIGNED_WEEK_OF_MONTH)) {
 				eventossDoDia.add(calendario.getEventos().get(i));
 			}
 		}
@@ -102,10 +100,9 @@ public class FachadaClaudia {
 	public ArrayList<Evento> getListQuinta(){
 		ArrayList<Evento> eventossDoDia = new ArrayList<>();
 		for (int i = 0 ; i < calendario.getEventos().size(); i++) {
-			LocalDateTime.now().getDayOfWeek();
 			if(calendario.getEventos().get(i).getDataHoraInicio().getDayOfWeek() == DayOfWeek.THURSDAY 
-					&& LocalDateTime.now().getLong(ChronoField.ALIGNED_WEEK_OF_YEAR) ==
-					calendario.getEventos().get(i).getDataHoraInicio().getLong(ChronoField.ALIGNED_WEEK_OF_YEAR)) {
+					&& LocalDateTime.now().getLong(ChronoField.ALIGNED_WEEK_OF_MONTH) ==
+					calendario.getEventos().get(i).getDataHoraInicio().getLong(ChronoField.ALIGNED_WEEK_OF_MONTH)) {
 				eventossDoDia.add(calendario.getEventos().get(i));
 			}
 		}
@@ -115,10 +112,9 @@ public class FachadaClaudia {
 	public ArrayList<Evento> getListSexta(){
 		ArrayList<Evento> eventossDoDia = new  ArrayList<>();
 		for (int i = 0 ; i < calendario.getEventos().size(); i++) {
-			LocalDateTime.now().getDayOfWeek();
 			if(calendario.getEventos().get(i).getDataHoraInicio().getDayOfWeek() == DayOfWeek.FRIDAY 
-					&& LocalDateTime.now().getLong(ChronoField.ALIGNED_WEEK_OF_YEAR) ==
-					calendario.getEventos().get(i).getDataHoraInicio().getLong(ChronoField.ALIGNED_WEEK_OF_YEAR)) {
+					&& LocalDateTime.now().getLong(ChronoField.ALIGNED_WEEK_OF_MONTH) ==
+					calendario.getEventos().get(i).getDataHoraInicio().getLong(ChronoField.ALIGNED_WEEK_OF_MONTH)) {
 				eventossDoDia.add(calendario.getEventos().get(i));
 			}
 		}
@@ -128,10 +124,9 @@ public class FachadaClaudia {
 	public ArrayList<Evento> getListSabado(){
 		ArrayList<Evento> eventossDoDia = new  ArrayList<>();
 		for (int i = 0 ; i < calendario.getEventos().size(); i++) {
-			LocalDateTime.now().getDayOfWeek();
 			if(calendario.getEventos().get(i).getDataHoraInicio().getDayOfWeek() == DayOfWeek.SATURDAY 
-					&& LocalDateTime.now().getLong(ChronoField.ALIGNED_WEEK_OF_YEAR) ==
-					calendario.getEventos().get(i).getDataHoraInicio().getLong(ChronoField.ALIGNED_WEEK_OF_YEAR)) {
+					&& LocalDateTime.now().getLong(ChronoField.ALIGNED_WEEK_OF_MONTH) ==
+					calendario.getEventos().get(i).getDataHoraInicio().getLong(ChronoField.ALIGNED_WEEK_OF_MONTH)) {
 				eventossDoDia.add(calendario.getEventos().get(i));
 			}
 		}
