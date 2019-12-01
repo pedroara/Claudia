@@ -6,7 +6,7 @@
 <?import javafx.scene.control.ToolBar?>
 <?import javafx.scene.layout.AnchorPane?>
 
-<AnchorPane minWidth="1037.0" prefHeight="500.0" prefWidth="1361.0" stylesheets="@../css/whiteOnBlack.css" xmlns="http://javafx.com/javafx/8.0.171" xmlns:fx="http://javafx.com/fxml/1" fx:controller="controladoresTelas.ControllerClaudiaRemoverEventos">
+<AnchorPane minWidth="1037.0" prefHeight="500.0" prefWidth="1361.0" stylesheets="@../css/whiteOnBlack.css" xmlns="http://javafx.com/javafx/11.0.1" xmlns:fx="http://javafx.com/fxml/1" fx:controller="controladoresTelas.ControllerClaudiaRemoverEventos">
    <children>
       <ToolBar prefHeight="40.0" prefWidth="1361.0">
          <items>
@@ -18,7 +18,7 @@
       </ToolBar>
       <Label layoutX="92.0" layoutY="79.0" text="Escolha o evento:" />
       <ListView fx:id="EscolhaEvento" layoutX="92.0" layoutY="119.0" onMouseClicked="#selecionarEvento" prefHeight="360.0" prefWidth="200.0" />
-      <Label fx:id="evSelecionado" layoutX="264.0" layoutY="79.0" prefHeight="17.0" prefWidth="339.0" />
+      <Label fx:id="evSelecionado" layoutX="264.0" layoutY="79.0" prefHeight="9.0" prefWidth="594.0" />
       <Button fx:id="removerBtn" layoutX="321.0" layoutY="119.0" mnemonicParsing="false" text="Remover" />
    </children>
 </AnchorPane>

@@ -1,5 +1,7 @@
 package controladoresTelas;
 
+import java.time.Instant;
+import java.time.LocalDate;
 import java.time.LocalDateTime;
 import java.time.format.DateTimeFormatter;
 import gui.Main;
@@ -113,13 +115,13 @@ public class ControllerClaudiaEditarEvento {
         nomeId.setText(selecionado.getNome());
         descricaoId.setText(selecionado.getDescricao());
         
-        dataHoraInicioId.setValue(selecionado.getDataHoraInicio().toLocalDate());
-        dataHoraFimId.setValue(selecionado.getDataHoraFim().toLocalDate());
+        //dataHoraInicioId.setValue(selecionado.getDataHoraInicio().toLocalDate());
+        //dataHoraFimId.setValue(selecionado.getDataHoraFim().toLocalDate());
         horaInicio.setText(Integer.toString(selecionado.getDataHoraInicio().getHour()));
         horaFim.setText(Integer.toString(selecionado.getDataHoraFim().getHour()));
         minutoInicio.setText(Integer.toString(selecionado.getDataHoraInicio().getMinute()));
         minutoFim.setText(Integer.toString(selecionado.getDataHoraFim().getMinute()));
-
+        
         EscolhaEvento.getSelectionModel().getSelectedItem();
         //Texto pra avisar o usuário
         if (selecionado != null) {
@@ -138,7 +140,7 @@ public class ControllerClaudiaEditarEvento {
 			 String fimTxt = formatter.format(dataFim);
 			 
 			 editarEvento.setOnAction(new EventHandler<ActionEvent>() { @Override public void handle(ActionEvent event) { fachadaClaudia.editarEvento(selecionado, nomeId.getText(), descricaoId.getText(), inicioTxt, fimTxt); evSelecionado.setText("Evento editado com sucesso!");}} );
-			 EscolhaEvento.refresh();
+
 		 } else {
 			 avisoDataFim.setText("Datas incoerentes; insira um dia válido");
 			 throw new DataIncoerenteException(dataHoraFimId.getValue());
@@ -146,9 +148,27 @@ public class ControllerClaudiaEditarEvento {
 	 }else if(nomeId == null) {
 		 evSelecionado.setText("Campo de nome vazio");
 	 }
-    EscolhaEvento.refresh();
-	 }
+   
+    editarEvento.setOnMouseClicked(new EventHandler<MouseEvent>() { public void handle(ActionEvent event) {
+	    ObservableList<Evento> listaa = FXCollections.observableArrayList(fachadaClaudia.getCalendario().getEventos());
+	    
+	    EscolhaEvento.getItems().clear();
+	    EscolhaEvento.getItems().setAll(listaa);
+	    EscolhaEvento.refresh();
+    }
 
+	@Override
+	public void handle(MouseEvent arg0) {
+		// TODO Auto-generated method stub
+		
+	}} );
+    
+	 }
+    
+    @FXML
+    public void recarregarEventoBotao() {
+    	EscolhaEvento.refresh();
+    }
     
     public void initialize() {
     	

@@ -47,7 +47,6 @@ public class ControllerClaudiaRemoverEventos {
 	    	 }
 	    	 
 	    	 removerBtn.setOnAction(new EventHandler<ActionEvent>() { @Override public void handle(ActionEvent event) {  fachadaClaudia.remover(selecionado);  fachadaClaudia.getCalendario().salvarArquivo();  evSelecionado.setText("Evento removido!");} } );
-	    	
 	    }
 
 	    
