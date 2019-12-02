@@ -94,7 +94,6 @@ public class ControllerClaudiaAdicionarEvento {
 			 
 			 if(dataFim.isAfter(dataInicio) || dataHoraFimId.getValue() == dataHoraInicioId.getValue()) {
 				 
-				 
 				 String inicioTxt = formatter.format(dataInicio);
 				 String fimTxt = formatter.format(dataFim);
 				 

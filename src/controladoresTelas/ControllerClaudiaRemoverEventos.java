@@ -46,7 +46,7 @@ public class ControllerClaudiaRemoverEventos {
 	    		 evSelecionado.setText("Você tem certeza que deseja excluir o evento selecionado?");
 	    	 }
 	    	 
-	    	 removerBtn.setOnAction(new EventHandler<ActionEvent>() { @Override public void handle(ActionEvent event) {  fachadaClaudia.remover(selecionado);  fachadaClaudia.getCalendario().salvarArquivo();  evSelecionado.setText("Evento removido!");} } );
+	    	 removerBtn.setOnAction(new EventHandler<ActionEvent>() { @Override public void handle(ActionEvent event) {  fachadaClaudia.remover(selecionado);  fachadaClaudia.getCalendario().salvarArquivo();  evSelecionado.setText("Evento removido!");Main.loadScene("/gui/removeEvento.fxml", "Remover Evento");} } );
 	    }
 
 	    
